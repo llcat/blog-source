@@ -7,55 +7,108 @@ tags:
 
 #### 2018/07/24
 1. `abide`
+   - n
 2. `ability`
+   - n. 能力
 3. `able`
+   - a. 可以的
 4. `abnormal`
+   - a. 正常的
 5. `aboard`
+   - a.
 6. `abolish`
+   - v.
 7. `abound`
+   - a.
 8. `above`
+   - ad. 在...上面
 9. `abroad`
+   - a.
 10. `abrupt`
+    - v. 打扰
 11. `absence`
+    - n. 缺少，缺失
 12. `absolute`
+    - a. 完全的
 13. `absorb`
+    - v. 吸收
 14. `abstract`
+    - a. 抽象的
 15. `absurd`
+    - v. 
 16. `abundance`
+    - n. 富裕
 17. `abundant`
+    - a. 充足的
 18. `abuse`
+    - v. 虐待，滥用
 19. `academic`
+    - a. 学术的
 20. `academy`
+    - n. 学院
 21. `accelerate`
+    - v. 加速
 22. `acceptance`
+    - n. 接受，允许
 23. `access`
+    - v. 访问
 24. `accident`
+    - n. 意外
 25. `accidental`
+    - a. 意外的
 26. `acclaim`
+    - v. 声称
 27. `accommodate`
+    - v.
 28. `accommodation`
+    - n. 
 29. `accompany`
+    - v. 
 30. `accomplish`
+    - v. 完成
 31. `accord`
+    - v. 记录
 32. `according to`
+    - 由于
 33. `accordingly`
+    - ad. 由于
 34. `account`
+    - n. 账户
 35. `accountant`
+    - n. 会计
 36. `accumulate`
+    - v.
 37. `accuracy`
+    - n. 准确性
 38. `accurate`
+    - a. 精确的
 39. `accuse`
+    - v. 由于
 40. `accustom`
+    - v. 
 41. `achieve`
+    - v. 达到，获取
 42. `acid`
+    - a. 酸的
 43. `acknowledge`
+    - n. 知识
 44. `acquaintance`
+    - n.
 45. `acquire`
+    - v. 要求
 46. `acquisition`
+    - n.
 47. `across`
+    - v.交叉，穿过
 48. `act`
+    - v. 行动
 49. `action`
+    - n. 动作
 50. `activate`
+    - v. 激活
+
+review at 2018/08/01
+abide, aboard, abolish, abound, abroad, absurd,accomdate,accompany,accumulate, accustom, acquaintance, acquisition
 
 #### 2018/07/25
 1. `active`
