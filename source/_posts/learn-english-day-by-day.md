@@ -107,90 +107,191 @@ tags:
 50. `activate`
     - v. 激活
 
-review at 2018/08/01
-abide, aboard, abolish, abound, abroad, absurd,accomdate,accompany,accumulate, accustom, acquaintance, acquisition
+<font color="blue">review at 2018/08/01</font>
+abide, aboard, abolish, abound, abroad, absurd, accomdate, accompany, accumulate, accustom, acquaintance, acquisition
+<font color="blue">review at 2018/08/07</font>
+`abide` v. accept or act in accordance with a (rule, decision, or recommendation)
+eg: "i said i would abide by their decision."
+be able to tolerate (someone or something)
+eg: "if there is one thing i cannot abide it is lack of displine"
+`aboard` ad. on or into (ship, aircraft, train or other vehicle)
+`abolish` v. formally put an end to a (system, practice, or institution) eg:abolish slavery
+`abound` v. exists in large numbers or amounts
+`absurd` a. (of an idea or suggestion) wildly unreasonable, illogical, or inappropriate
+`accommodate` v. (of physical space, especially a building) provide lodging or sufficient space for
+eg: "the cabins accommodate up to 6 people"
+fit in with the wishes or needs of
+eg: "any language must accommodate new concepts"
+`accumulate` v. gather together or acquire an increasing number or quantity of
+eg: "investigators have yet to accumulate enough evidence"
+`acquisition` n. an asset or object bought or obtained, typically by a library or museum
+eg: "Among the museum's acquisitions, he discovered a furniture that he had made 40 years before"
+the learning or developing of a skill, habit, or quality
 
 #### 2018/07/25
 1. `active`
+   - a. 活跃的
 2. `activity`
+   - n. 活动
 3. `actor`
+   - n. 演员
 4. `actual`
+   - a. 实际的
 5. `acute`
+   - a. 
 6. `adapt`
+   - v. 收养
 7. `add`
+   - v. 加，增加
 8. `addict`
+   - a. 
 9. `addition`
+   - n. 附加
 10. `additionial`
+    - a. 附加的，额外的
 11. `address`
+    - n. 地址
 12. `adequate`
+    - a. 足够的
 13. `adhere`
+    - a. 
 14. `adjective`
+    - ad. 主观的
 15. `adjoin`
+    - v. 
 16. `adjust`
+    - v. 调整
 17. `administer`
+    - v. 管理
 18. `administration`
+    - n. 管理员
 19. `admire`
+    - v. 尊敬
 20. `admission`
+    - n. 
 21. `admit`
+    - v. 
 22. `adolescent`
+    - n. 青少年
 23. `adopt`
+    - v. 收养
 24. `adore`
+    - v.
 25. `adult`
+    - n. 成年人
 26. `advance`
+    - n. 先进
 27. `advanced`
+    - a. 先进的，领先的
 28. `advantage`
+    - n. 优势
 29. `advent`
+    - n. 
 30. `adventure`
+    - n. 冒险
 31. `advertise`
+    - v. 广告
 32. `advice`
+    - v. 建议
 33. `advisable`
+    - a. 
 34. `advise`
+    - v. 
 35. `advocate`
+    - v. 
 36. `aerial`
+    - a. 一系列
 37. `aeroplane`
+    - n. 飞机
 38. `affair`
+    - v. 
 39. `affect`
+    - v. 影响
 40. `affiliate`
+    - v. 
 41. `affirm`
+    - v.
 42. `afford`
+    - n. 努力
 43. `after`
+    - ad. 在...后
 44. `afternoon`
+    - n. 下午，午后
 45. `afterward`
+    - v. 
 46. `again`
+    - ad. 再次
 47. `against`
+    - v. 对抗
 48. `age`
+    - n. 年龄
 49. `agency`
+    - n. 代理
 50. `agenda`
+    - n. 
 51. `agent`
+    - n. 代理商
 52. `aggravate`
+    - v.
 53. `aggressive`
+    - v. 侵略
 54. `ago`
+    - ad. 从前
 55. `agony`
+    - n. 
 56. `agree`
-57. `ageeable`
+    - v. 同意
+57. `agreeable`
+    - a. 赞同的
 58. `agreement`
+    - n. 同意
 59. `agriculture`
+    - n. 农业
 60. `ahead`
+    - ad. 向前
 61. `aid`
+    - v. 帮助
 62. `aim`
+    - v. 瞄准
 63. `air`
+    - n. 空气
 64. `air-conditioning`
+    - n. 空调
 65. `aircraft`
+    - n. 飞行器
 66. `airline`
+    - n. 航线
 67. `airport`
+    - n. 机场
 68. `alarm`
+    - v. 警告
 69. `alcohol`
+    - a. （含)酒精的
 70. `alert`
+    - v. 提示
 71. `alien`
+    - n. 外星人
 72. `alike`
+    - v. 像，类似
 73. `alive`
+    - a. 活着的
 74. `all`
+    - a. 所有
 75. `allege`
+    - v. 
 76. `alleviate`
+    - n. 
 77. `alliance`
+    - n. 联盟
 78. `allocate`
+    - v. 分配
 79. `allow`
+    - v. 允许
 80. `allowance`
+    - n. 许可
+
+<font color="blue">review at 2018/08/07</font>
+acute, addict, adhere, adjective, adjoin, admission, admit, adore, advent, advise, advocate, affair, affiliate, affirm, afterward, agenda, aggravate, agony, aid, alarm, allege, alleviate 
 
 #### 2018/07/27
 1. `ally`
