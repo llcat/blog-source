@@ -293,6 +293,65 @@ the learning or developing of a skill, habit, or quality
 <font color="blue">review at 2018/08/07</font>
 acute, addict, adhere, adjective, adjoin, admission, admit, adore, advent, advise, advocate, affair, affiliate, affirm, afterward, agenda, aggravate, agony, aid, alarm, allege, alleviate 
 
+<font color="blue">review at 2018/08/13</font>
+`accute` a. (of a bad, difficult, or unwelcome situation or phenomenon) present or experienced to a severe or intense degree
+eg: "an acute housing shortage"
+having or showing a perceptive understanding or insight:shrewd
+eg: "an acute awareness of changing fashions"
+(of an angle)less than 90 degree
+eg: "it has a large posterior auricle that has a concave posterior margin metting the hinge at an acute angle"
+
+`addict` n. a person who is addicted to a particular substance, typically an illegal drug
+eg: "a former herion addict"
+
+`adhere` v. stick fast to (a surfacce or substance)
+eg: "paint won't adhere well to greasy surface"
+
+`adjective` n. a word or phrase naming an attribute, added to or grammatically related to a noun to modify or describe it
+eg: "An important reason for this is that most nouns and most adjectives have rather complex semantic structures"
+
+`adjoin` v. be next to and joined with(a building, room, or place of land)
+eg: "the dinning room adjoins a small library"
+
+`admission` n. a statement acknowleding the truth of something
+eg: "an admission of guilt"
+the process or fact of entering or being allowed to enter a place, organization, or institution
+eg: "i had some difficulty securing admission to the embassy"
+
+`admit` v. confess to be true or to be the case, typically with reluctance
+eg: "the office finally admitted that several prisoners had been injured"
+allow (someone) to enter a place
+eg: "senior citizens ad admitted free to the museum"
+allow the possibility of
+eg: "the need to inform him was too urgent to admit of further delay"
+
+`adore` v. love and respect (someone) deeply
+eg: "he adored his mother"
+
+`advent` n. the arrival of a notable person, thing, or event
+eg: "the advent of television"
+
+`advise` v. offer suggestions about the best course of action to someone
+eg: "i advised him to go home"
+
+`advocate` n. a person who publicly supports or recommends a particular cause or pilicy
+eg: "he was an untiring advocate of economic reform"
+
+`affair` n. an event or sequence of evnets of a specified kind or that has previously been referred to
+eg: "the board admitted responsibility for the affair"
+a love affair
+eg: "his wife is having an affair"
+
+`affiliate` v. officially attach or connect (a subsidiary group or person) to an organization
+eg: "the college is affiliated with the University of Wisconsin"
+n. a person or organization officially attached to a larger body
+eg: "the company established links with British affiliates"
+
+`affirm` v. state as a fact, assert strongly and publicly
+eg: "he affirmed the country's commitment to peace"
+offer (someone) emotional support or encouragement
+eg: "there are five common ways parents fail to affirm their children"
+
 #### 2018/07/27
 1. `ally`
 2. `almost`
