@@ -8,6 +8,53 @@ tags:
 #### 技术备忘录
 可能是年龄大了，记忆力越来越不好呢，本着好记性不如烂笔头的原则，将一些可能会用到的一些技术方面的杂项记录下来。
 
+#### docker配置
+记录以下常用的docker常会用到的配置
+- 修改Docker daemon默认存储位置
+  Docker daemon持久化所有的数据在一个目录下，包含容器，镜像，数据卷等等一切相关的信息。
+  默认路径：
+  Linux:`/var/lib/docker`
+  Win:`C:\ProgramData\docker`
+  假设你使用的linux系统，挂载的主分区分配的空间比较小需要更换docker daemon的存储路径。可以在`/etc/docker/daemon.json`中这样配置
+  ```json
+  {
+      "data-root": "/home/your/path"
+  }
+  ```
+  在之前配置时，还有使用过这样的写法，但是这次我在官方文档中没有找到，如下(在我的18.03版本的中，这样配置也是生效的)：
+  ```json
+  {
+      "graph": "/home/your/path"
+  }
+  ```
+  在`daemon.json`中对docker daemon作配置是官方推荐的做法。除此之外，还有启动命令行指定参数等，但这个做法显然比较简单。
+
+- 给docker daemon配置代理HTTP/HTTPS代理
+  如果你当前的环境在公司内网中，需要通过代理才能访问Internet,那么你想要从外部pull镜像时，也要给你的docker daemon单独配置代理，docker daemon是在启动时根据`HTTP_PROXY`,`HTTPS_PROXY`,`NO_PROXY`三个环境变量来配置HTTP/HTTPS代理的，要配置docker daemon的代理，我们需要做如下修改：
+  1. 在systemd目录下为docker创建目录
+  `sudo mkdir -p /etc/systemd/system/docker.service.d/`
+  2. 创建http-proxy.conf或https-proxy.conf文件
+  `touch /etc/syatemd/system/docker.service.d/http-proxy.conf`
+  并在文件中添加下面的配置
+  ```
+  [Service]
+  Environments="HTTP_PROXY=http://proxy-server-name-or-ip:port"
+  ```
+  如果你是走的HTTPS代理，在https-proxy.conf中添加上面的内容
+  3. 如果你有内网的私有registries，可以配置哪些域名或ip不走代理。
+  ```
+  [Service]
+  Environment="HTTP_PROXY=http://proxy-server-name-or-ip:port"
+  Environment="NO_PROXY=localhost,127.0.0.1"
+  ```
+  4. 刷新配置并重启docker daemon
+  ```sh
+  sudo systemctl daemon-reload
+  sudo systemctl restart docker
+  ```
+  
+
+
 #### C 预处理器
 C语言通过预处理提供了一些语言层面的功能，一般来说，从我们的源代码到可执行文件要经过下面几个步骤，预处理 -> [根据以#开头的指令，处理过的源程序代码] -> 编译器 -> [汇编程序] -> 汇编器 -> [目标程序， xxx.o] -> 链接器 -> [可执行程序]，预处理是我们程序编译开始的第一个步骤，那么在C语言我们主要使用到下面几个预处理的指令。
 - 文件包含
