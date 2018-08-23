@@ -8,6 +8,29 @@ tags:
 #### 技术备忘录
 可能是年龄大了，记忆力越来越不好呢，本着好记性不如烂笔头的原则，将一些可能会用到的一些技术方面的杂项记录下来。
 
+#### Win10远程桌面Ubuntu16.04
+Ubuntu开启远程桌面共享后，想要用win10自带的远程桌面访问，还需要在ubuntu主机上完成下面的配置。
+1. 开启远程桌面共享，见下图
+{% asset_img open_desktop_share.PNG open_desktop_share %}
+2. 安装xrdp
+```sh
+sudo apt-get install xrdp
+# 查看服务是否开启
+service --status-all
+# 若没开启
+service xrdp start
+```
+3. 安装dconf-editor
+```
+sudo apt-get install dconf-editor
+```
+安装完成后，运行dconf-editor,依次展开org->gnome->desktop->remote-access
+去掉require-encryption的勾选，如下：
+{% asset_img cancel_encryption.png cancel_require_encryption %}
+
+4. 使用win10远程桌面连接
+选择vnc-any,输入相关信息连接即可
+{% asset_img win_remote_desktop.PNG win_remote_desktop %}
 #### docker配置
 记录以下常用的docker常会用到的配置
 - 修改Docker daemon默认存储位置
@@ -53,6 +76,16 @@ tags:
   sudo systemctl restart docker
   ```
   
+- 新安装docker后，设置非root用户可使用
+  1. 添加docker用户组
+  ```
+  sudo groupadd docker
+  ```
+  2. 将当前用户添加到用户组
+  ```
+  sudo usermod -aG docker $USER
+  ```
+  注销当前用户在重新登陆即可使用
 
 
 #### C 预处理器
@@ -142,7 +175,7 @@ examples:
 
 #### git checkout fail: FILE NAME TOO LONG
 今天clone一个仓库时碰到下面的错误，由于路径太长，git不能检出到工作分区。报错如下图
-{% asset_img git_checkout_failure.png git_checkout_failure %}
+{% asset_img git_checkout_failure.PNG git_checkout_failure %}
 
 解决方法如下:
 1. 配置git core的longpath属性
