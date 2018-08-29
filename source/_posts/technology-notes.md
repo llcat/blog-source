@@ -7,6 +7,56 @@ tags:
 
 #### 技术备忘录
 可能是年龄大了，记忆力越来越不好呢，本着好记性不如烂笔头的原则，将一些可能会用到的一些技术方面的杂项记录下来。
+#### js访问soap协议的接口
+如果你的后台项目是基于soap协议编写的webservice,推荐一个jquery的插件，可以简化请求过程。
+jquery.soap:https://github.com/doedje/jquery.soap
+非常好使，解决了我最近项目中的痛点，毕竟自己去基于soap协议封装请求还是相当麻烦的，有好轮子就直接用吧。
+#### 使用nginx完成反向代理并允许跨域请求
+最近需要将原有的一个android项目，基于vue.js重写为一个spa以兼容多个平台的使用，在从后端拿数据时碰到了这样的问题，本地调试时遇到了浏览器的同源限制，想拿数据非常不方便。想到了下面几种方法：
+- 我们的web app可以与早先已有的后台项目部署在同一台服务器上。(然而，不现实，仅仅是用来开发调试的情况下，后台team不会允许我们随便摆弄他们的服务器的)
+- 后台team给他们项目的返回头中添加`Access-Control-Allow-Origin`等字段，允许跨源访问。(沟通无果，后台team不想加)
+- `jsonp,iframe`等技术绕过浏览器的限制。(写起来巨麻烦，还有一些限制，很不爽)
+- 自己写个中间层去转一下，自己用`python`基于`flask`写了中间层去请求，然后前端请求用自己写的接口，但这样调试用写两个接口用下还行，几十几百个接口也不可能一个个的去写。(当然，这里还是赞下py的简洁性，解决跨域访问引入`flask-cors`一句话就解决了)
+- 绝招: 使用`nginx`的反向代理，并在返回头中添加允许跨源访问的字段。
+  
+使用nginx做反向代理是最简单有效的,配好后就可以轻松的使用呢，下面给出我的配置：
+```
+server {
+        listen       8080;
+        server_name  localhost;
+        location / {
+            if ($request_method = OPTIONS ) {
+                return 204;
+            }
+            add_header Access-Control-Allow-Origin '*';
+            add_header Access-Control-Allow-Methods 'GET, PUT, POST, DELETE, OPTIONS';
+            add_header Access-Control-Allow-Headers 'content-type,soapaction,*';
+            proxy_pass    http://your-ip:port/;
+        }
+    }
+```
+说明：
+1. 因为我使用的后端api是基于soap编写的webservice,请求的资源类型是非常规的,所以浏览器会自动帮我发送一个OPTIONS请求去询问服务器是否支持接下来的跨域请求，比如我的这个OPTIONS请求，头部中包含下面的字段，说的意思是你帮忙看下我接下来跨域的请求的方法是POST,请求的头部中包含`content-type`和`soapaction`这两个字段，你支持吗？
+   ```
+   Access-Control-Request-Method: POST
+   Access-Control-Request-Headers: content-type,soapaction
+   ```
+   那我们作为一个方向代理服务器，当然不用去验证什么，所以如果我们拦截到方法是OPTIONS,直接返回状态码204即可，告诉浏览器，你只管发下一个请求吧，返不会结果算我输~
+2. 那么接下来，我们的nginx自然是把接下来的POST请求直接转发给我们的代理服务器去处理，可以看到这个POST的请求头部中是有刚才OPTIONS请求中提到的字段，如`SOAPAction:listAllVmInfoByUserId`,完整头部如下：
+   ```
+   Host: localhost:8080
+   Accept: application/xml, text/xml, */*; q=0.01
+   Accept-Language: zh-CN,en-US;q=0.7,en;q=0.3
+   Accept-Encoding: gzip, deflate
+   Referer: http://localhost:8082/
+   Content-Type: text/xml; charset=UTF-8
+   SOAPAction: listAllVminfoByUserId
+   Content-Length: 307
+   Origin: http://localhost:8082
+   Connection: keep-alive
+   Cache-Control: max-age=0
+   ```
+3. 我们代理的服务器上的资源实际上是不支持在浏览器中跨源访问的，所以他的response的头部中是不会有允许跨源访问的相关字段的，这个时候靠我们的nginx的`add_header`的指令给response中增加我们想要的头部即可，如`Access-Control-Allow-Methods, Access-Control-Allow-Headers`等字段,告诉浏览器我们允许跨域访问喔，返回的数据请收好，整个流程完毕。
 
 #### Win10远程桌面Ubuntu16.04
 Ubuntu开启远程桌面共享后，想要用win10自带的远程桌面访问，还需要在ubuntu主机上完成下面的配置。
