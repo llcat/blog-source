@@ -5,6 +5,58 @@ tags:
   - life 
 ---
 
+#### 2018/09/04
+1. `criticism`
+2. `criticize`
+3. `crop`
+4. `cross`
+5. `crowd`
+6. `crown`
+7. `crucial`
+8. `cruel`
+9. `crush`
+10. `cry`
+11. `cucumber`
+12. `cultivate`
+13. `culture`
+14. `cue`
+15. `cunning`
+16. `cup`
+17. `curb`
+18. `cure`
+19. `curiosity`
+20. `curious`
+21. `current`
+22. `curriculum`
+23. `curse`
+24. `curve`
+25. `custom`
+26. `customary`
+27. `customer`
+28. `cut`
+29. `cyberspace`
+30. `cycle`
+31. `daily`
+32. `dam`
+33. `damage`
+34. `damn`
+35. `damp`
+36. `dance`
+37. `danger`
+38. `dangerous`
+39. `dare`
+40. `dark`
+41. `dash`
+42. `data`
+43. `database`
+44. `date`
+45. `daughter`
+46. `dawn`
+47. `day`
+48. `daytime`
+49. `dazzle`
+50. `dead`
+
 #### 2018/09/03
 1. `core`
 2. `corner`
@@ -56,7 +108,6 @@ tags:
 48. `criterion`
 49. `critic`
 50. `critical`
-51. `criticism`
 
 #### 2018/07/24
 1. `abide`
