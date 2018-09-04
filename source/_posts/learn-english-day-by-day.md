@@ -4,7 +4,57 @@ date: 2018-07-24 06:56:48
 tags:
   - life 
 ---
+#### 2018/09/05
+1. `deadline`
+2. `deadly`
+3. `deal`
+4. `dealer`
+5. `dean`
+6. `death`
+7. `debate`
+8. `debt`
+9. `decade`
+10. `decay`
+11. `decieve`
+12. `December`
+13. `decide`
+14. `decision`
+15. `decisive`
+16. `declaration`
+17. `declare`
+18. `decline`
+19. `decorate`
+20. `decrease`
+21. `dedicate`
+22. `deduce`
+23. `deduct`
+24. `deed`
+25. `deem`
+26. `deep`
+27. `default`
+28. `defeat`
+29. `defect`
+30. `defence`
+31. `defend`
+32. `defendant`
+33. `defer`
+34. `deficiency`
+35. `define`
+36. `definite`
+37. `definition`
+38. `defy`
+39. `degree`
+40. `delay`
+41. `delete`
+42. `delibearate`
+43. `delicate`
+44. `delicious`
+45. `delight`
+46. `deliver`
+47. `delivery`
+48. `demand`
 
+ 
 #### 2018/09/04
 1. `criticism`
 2. `criticize`
