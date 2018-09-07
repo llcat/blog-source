@@ -4,6 +4,64 @@ date: 2018-07-24 06:56:48
 tags:
   - life 
 ---
+
+#### 2018/09/08
+1. `desert`
+2. `deserve`
+3. `design`
+4. `desire`
+5. `desirable`
+6. `desk`
+7. `despair`
+8. `desperate`
+9. `despite`
+10. `destination`
+11. `destiny`
+12. `destroy`
+13. `destruction`
+14. `detach`
+15. `detail`
+16. `detect`
+17. `detector`
+18. `deteriorate`
+19. `determine`
+20. `develop`
+21. `device`
+22. `devil`
+23. `devise`
+24. `deveto`
+25. `diagnose`
+26. `dialect`
+27. `dictate`
+28. `die`
+
+#### 2018/09/06
+1. `democracy`
+2. `democratic`
+3. `demonstrate`
+4. `denote`
+5. `dense`
+6. `density`
+7. `dental`
+8. `dentist`
+9. `deny`
+10. `depart`
+11. `department`
+12. `depature`
+13. `depend`
+14. `dependent`
+15. `depict`
+16. `deposit`
+17. `depress`
+18. `deprive`
+19. `depth`
+20. `deputy`
+21. `derive`
+22. `descend`
+23. `descendant`
+24. `describe`
+25. `description`
+
 #### 2018/09/05
 1. `deadline`
 2. `deadly`
@@ -159,128 +217,201 @@ tags:
 49. `critic`
 50. `critical`
 
-#### 2018/07/24
-1. `abide`
-   - n
-2. `ability`
-   - n. 能力
-3. `able`
-   - a. 可以的
-4. `abnormal`
-   - a. 正常的
-5. `aboard`
-   - a.
-6. `abolish`
-   - v.
-7. `abound`
-   - a.
-8. `above`
-   - ad. 在...上面
-9. `abroad`
-   - a.
-10. `abrupt`
-    - v. 打扰
-11. `absence`
-    - n. 缺少，缺失
-12. `absolute`
-    - a. 完全的
-13. `absorb`
-    - v. 吸收
-14. `abstract`
-    - a. 抽象的
-15. `absurd`
-    - v. 
-16. `abundance`
-    - n. 富裕
-17. `abundant`
-    - a. 充足的
-18. `abuse`
-    - v. 虐待，滥用
-19. `academic`
-    - a. 学术的
-20. `academy`
-    - n. 学院
-21. `accelerate`
-    - v. 加速
-22. `acceptance`
-    - n. 接受，允许
-23. `access`
-    - v. 访问
-24. `accident`
-    - n. 意外
-25. `accidental`
-    - a. 意外的
-26. `acclaim`
-    - v. 声称
-27. `accommodate`
-    - v.
-28. `accommodation`
-    - n. 
-29. `accompany`
-    - v. 
-30. `accomplish`
-    - v. 完成
-31. `accord`
-    - v. 记录
-32. `according to`
-    - 由于
-33. `accordingly`
-    - ad. 由于
-34. `account`
-    - n. 账户
-35. `accountant`
-    - n. 会计
-36. `accumulate`
-    - v.
-37. `accuracy`
-    - n. 准确性
-38. `accurate`
-    - a. 精确的
-39. `accuse`
-    - v. 由于
-40. `accustom`
-    - v. 
-41. `achieve`
-    - v. 达到，获取
-42. `acid`
-    - a. 酸的
-43. `acknowledge`
-    - n. 知识
-44. `acquaintance`
-    - n.
-45. `acquire`
-    - v. 要求
-46. `acquisition`
-    - n.
-47. `across`
-    - v.交叉，穿过
-48. `act`
-    - v. 行动
-49. `action`
-    - n. 动作
-50. `activate`
-    - v. 激活
+#### 2018/08/13
+1. `attempt`
+2. `attend`
+3. `attendance`
+4. `attendant`
+5. `attention`
+6. `attitude`
+7. `attorney`
+8. `attract`
+9. `attractive`
+10. `attribute`
+11. `audience`
+12. `audit`
+13. `augment`
+14. `August`
+15. `authentic`
+16. `author`
+17. `authority`
+18. `auto`
+19. `automatic`
+20. `automation`
+21. `autonomy`
+22. `auxiliary`
+23. `avaliable`
+24. `avenue`
+25. `average`
+26. `avoid`
+27. `await`
+28. `awake`
+29. `award`
+30. `aware`
+31. `away`
+32. `awkward`
+33. `axis`
+34. `baby`
+35. `bachelor`
+36. `back`
+37. `background`
+38. `backward`
+39. `bacterium`
+40. `bad`
+41. `badly`
+42. `bag`
+43. `bait`
+44. `bake`
+45. `balance`
+46. `ball`
+47. `ballet`
+48. `balloon`
+49. `ballot`
+50. `ban`
 
-<font color="blue">review at 2018/08/01</font>
-abide, aboard, abolish, abound, abroad, absurd, accomdate, accompany, accumulate, accustom, acquaintance, acquisition
-<font color="blue">review at 2018/08/07</font>
-`abide` v. accept or act in accordance with a (rule, decision, or recommendation)
-eg: "i said i would abide by their decision."
-be able to tolerate (someone or something)
-eg: "if there is one thing i cannot abide it is lack of displine"
-`aboard` ad. on or into (ship, aircraft, train or other vehicle)
-`abolish` v. formally put an end to a (system, practice, or institution) eg:abolish slavery
-`abound` v. exists in large numbers or amounts
-`absurd` a. (of an idea or suggestion) wildly unreasonable, illogical, or inappropriate
-`accommodate` v. (of physical space, especially a building) provide lodging or sufficient space for
-eg: "the cabins accommodate up to 6 people"
-fit in with the wishes or needs of
-eg: "any language must accommodate new concepts"
-`accumulate` v. gather together or acquire an increasing number or quantity of
-eg: "investigators have yet to accumulate enough evidence"
-`acquisition` n. an asset or object bought or obtained, typically by a library or museum
-eg: "Among the museum's acquisitions, he discovered a furniture that he had made 40 years before"
-the learning or developing of a skill, habit, or quality
+#### 2018/08/01
+1. `applicable`
+2. `application`
+3. `apply`
+4. `appoint`
+5. `appointment`
+6. `appreciate`
+7. `approach`
+8. `appropriate`
+9. `approval`
+10. `approve`
+11. `approximate`
+12. `April`
+13. `archaeology`
+14. `architecture`
+15. `area`
+16. `argue`
+17. `arguement`
+18. `arise`
+19. `arithmetic`
+20. `arm`
+21. `army`
+22. `around`
+23. `arouse`
+24. `arrange`
+25. `array`
+26. `arrest`
+27. `arrival`
+28. `arrive`
+29. `arrogant`
+30. `art`
+31. `article`
+32. `articulate`
+33. `artificial`
+34. `artist`
+35. `artistic`
+36. `as`
+37. `ashore`
+38. `aside`
+39. `ask`
+40. `asleep`
+41. `aspect`
+42. `aspire`
+43. `assault`
+44. `assemble`
+45. `assembly`
+46. `assert`
+47. `assess`
+48. `asset`
+49. `assign`
+50. `assignment`
+51. `assimilate`
+52. `assist`
+53. `assistance`
+54. `asistant`
+55. `associate`
+56. `association`
+57. `assume`
+58. `assumption`
+59. `assurance`
+60. `assure`
+61. `astonish`
+62. `astronaut`
+63. `astronomy`
+64. `at`
+65. `athlete`
+66. `atmosphere`
+67. `atom`
+68. `atatch`
+69. `attack`
+70. `attain`
+
+#### 2018/07/27
+1. `ally`
+2. `almost`
+3. `alone`
+4. `along`
+5. `alongside`
+6. `alphabet`
+7. `already`
+8. `also`
+9. `alter`
+10. `alternate`
+11. `alternative `
+12. `although`
+13. `altitude`
+14. `altogether`
+15. `always`
+16. `amateur`
+17. `amaze`
+18. `ambiguous`
+19. `ambition`
+20. `ambitious`
+21. `ambulance`
+22. `amiable`
+23. `amid`
+24. `among`
+25. `amount`
+26. `ample`
+27. `amuse`
+28. `analogy`
+29. `analogue`
+30. `analyse`
+31. `analysis`
+32. `analytic`
+33. `ancestor`
+34. `anchor`
+35. `ancient`
+36. `and`
+37. `anecdote`
+38. `angel`
+39. `anger`
+40. `angle`
+41. `angry`
+42. `animal`
+43. `announce`
+44. `annoy`
+45. `annual`
+46. `anonymous`
+47. `anthor`
+48. `answer`
+49. `ant`
+50. `anticipate`
+51. `antique`
+52. `anxiety`
+53. `anxious`
+54. `any`
+55. `anyone`
+56. `anything`
+57. `anyway`
+58. `anywhere`
+59. `apart`
+60. `apartment`
+61. `apologize`
+62. `aplogy`
+63. `apparatus`
+64. `apparent`
+65. `appeal`
+66. `appear`
+67. `appearance`
+68. `appetite`
+69. `apple`
+70. `appliance`
 
 #### 2018/07/25
 1. `active`
@@ -506,198 +637,125 @@ eg: "he affirmed the country's commitment to peace"
 offer (someone) emotional support or encouragement
 eg: "there are five common ways parents fail to affirm their children"
 
-#### 2018/07/27
-1. `ally`
-2. `almost`
-3. `alone`
-4. `along`
-5. `alongside`
-6. `alphabet`
-7. `already`
-8. `also`
-9. `alter`
-10. `alternate`
-11. `alternative `
-12. `although`
-13. `altitude`
-14. `altogether`
-15. `always`
-16. `amateur`
-17. `amaze`
-18. `ambiguous`
-19. `ambition`
-20. `ambitious`
-21. `ambulance`
-22. `amiable`
-23. `amid`
-24. `among`
-25. `amount`
-26. `ample`
-27. `amuse`
-28. `analogy`
-29. `analogue`
-30. `analyse`
-31. `analysis`
-32. `analytic`
-33. `ancestor`
-34. `anchor`
-35. `ancient`
-36. `and`
-37. `anecdote`
-38. `angel`
-39. `anger`
-40. `angle`
-41. `angry`
-42. `animal`
-43. `announce`
-44. `annoy`
-45. `annual`
-46. `anonymous`
-47. `anthor`
-48. `answer`
-49. `ant`
-50. `anticipate`
-51. `antique`
-52. `anxiety`
-53. `anxious`
-54. `any`
-55. `anyone`
-56. `anything`
-57. `anyway`
-58. `anywhere`
-59. `apart`
-60. `apartment`
-61. `apologize`
-62. `aplogy`
-63. `apparatus`
-64. `apparent`
-65. `appeal`
-66. `appear`
-67. `appearance`
-68. `appetite`
-69. `apple`
-70. `appliance`
+#### 2018/07/24
+1. `abide`
+   - n
+2. `ability`
+   - n. 能力
+3. `able`
+   - a. 可以的
+4. `abnormal`
+   - a. 正常的
+5. `aboard`
+   - a.
+6. `abolish`
+   - v.
+7. `abound`
+   - a.
+8. `above`
+   - ad. 在...上面
+9. `abroad`
+   - a.
+10. `abrupt`
+    - v. 打扰
+11. `absence`
+    - n. 缺少，缺失
+12. `absolute`
+    - a. 完全的
+13. `absorb`
+    - v. 吸收
+14. `abstract`
+    - a. 抽象的
+15. `absurd`
+    - v. 
+16. `abundance`
+    - n. 富裕
+17. `abundant`
+    - a. 充足的
+18. `abuse`
+    - v. 虐待，滥用
+19. `academic`
+    - a. 学术的
+20. `academy`
+    - n. 学院
+21. `accelerate`
+    - v. 加速
+22. `acceptance`
+    - n. 接受，允许
+23. `access`
+    - v. 访问
+24. `accident`
+    - n. 意外
+25. `accidental`
+    - a. 意外的
+26. `acclaim`
+    - v. 声称
+27. `accommodate`
+    - v.
+28. `accommodation`
+    - n. 
+29. `accompany`
+    - v. 
+30. `accomplish`
+    - v. 完成
+31. `accord`
+    - v. 记录
+32. `according to`
+    - 由于
+33. `accordingly`
+    - ad. 由于
+34. `account`
+    - n. 账户
+35. `accountant`
+    - n. 会计
+36. `accumulate`
+    - v.
+37. `accuracy`
+    - n. 准确性
+38. `accurate`
+    - a. 精确的
+39. `accuse`
+    - v. 由于
+40. `accustom`
+    - v. 
+41. `achieve`
+    - v. 达到，获取
+42. `acid`
+    - a. 酸的
+43. `acknowledge`
+    - n. 知识
+44. `acquaintance`
+    - n.
+45. `acquire`
+    - v. 要求
+46. `acquisition`
+    - n.
+47. `across`
+    - v.交叉，穿过
+48. `act`
+    - v. 行动
+49. `action`
+    - n. 动作
+50. `activate`
+    - v. 激活
 
-#### 2018/08/01
-1. `applicable`
-2. `application`
-3. `apply`
-4. `appoint`
-5. `appointment`
-6. `appreciate`
-7. `approach`
-8. `appropriate`
-9. `approval`
-10. `approve`
-11. `approximate`
-12. `April`
-13. `archaeology`
-14. `architecture`
-15. `area`
-16. `argue`
-17. `arguement`
-18. `arise`
-19. `arithmetic`
-20. `arm`
-21. `army`
-22. `around`
-23. `arouse`
-24. `arrange`
-25. `array`
-26. `arrest`
-27. `arrival`
-28. `arrive`
-29. `arrogant`
-30. `art`
-31. `article`
-32. `articulate`
-33. `artificial`
-34. `artist`
-35. `artistic`
-36. `as`
-37. `ashore`
-38. `aside`
-39. `ask`
-40. `asleep`
-41. `aspect`
-42. `aspire`
-43. `assault`
-44. `assemble`
-45. `assembly`
-46. `assert`
-47. `assess`
-48. `asset`
-49. `assign`
-50. `assignment`
-51. `assimilate`
-52. `assist`
-53. `assistance`
-54. `asistant`
-55. `associate`
-56. `association`
-57. `assume`
-58. `assumption`
-59. `assurance`
-60. `assure`
-61. `astonish`
-62. `astronaut`
-63. `astronomy`
-64. `at`
-65. `athlete`
-66. `atmosphere`
-67. `atom`
-68. `atatch`
-69. `attack`
-70. `attain`
-
-#### 2018/08/13
-1. `attempt`
-2. `attend`
-3. `attendance`
-4. `attendant`
-5. `attention`
-6. `attitude`
-7. `attorney`
-8. `attract`
-9. `attractive`
-10. `attribute`
-11. `audience`
-12. `audit`
-13. `augment`
-14. `August`
-15. `authentic`
-16. `author`
-17. `authority`
-18. `auto`
-19. `automatic`
-20. `automation`
-21. `autonomy`
-22. `auxiliary`
-23. `avaliable`
-24. `avenue`
-25. `average`
-26. `avoid`
-27. `await`
-28. `awake`
-29. `award`
-30. `aware`
-31. `away`
-32. `awkward`
-33. `axis`
-34. `baby`
-35. `bachelor`
-36. `back`
-37. `background`
-38. `backward`
-39. `bacterium`
-40. `bad`
-41. `badly`
-42. `bag`
-43. `bait`
-44. `bake`
-45. `balance`
-46. `ball`
-47. `ballet`
-48. `balloon`
-49. `ballot`
-50. `ban`
+<font color="blue">review at 2018/08/01</font>
+abide, aboard, abolish, abound, abroad, absurd, accomdate, accompany, accumulate, accustom, acquaintance, acquisition
+<font color="blue">review at 2018/08/07</font>
+`abide` v. accept or act in accordance with a (rule, decision, or recommendation)
+eg: "i said i would abide by their decision."
+be able to tolerate (someone or something)
+eg: "if there is one thing i cannot abide it is lack of displine"
+`aboard` ad. on or into (ship, aircraft, train or other vehicle)
+`abolish` v. formally put an end to a (system, practice, or institution) eg:abolish slavery
+`abound` v. exists in large numbers or amounts
+`absurd` a. (of an idea or suggestion) wildly unreasonable, illogical, or inappropriate
+`accommodate` v. (of physical space, especially a building) provide lodging or sufficient space for
+eg: "the cabins accommodate up to 6 people"
+fit in with the wishes or needs of
+eg: "any language must accommodate new concepts"
+`accumulate` v. gather together or acquire an increasing number or quantity of
+eg: "investigators have yet to accumulate enough evidence"
+`acquisition` n. an asset or object bought or obtained, typically by a library or museum
+eg: "Among the museum's acquisitions, he discovered a furniture that he had made 40 years before"
+the learning or developing of a skill, habit, or quality
