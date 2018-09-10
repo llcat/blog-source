@@ -5,6 +5,35 @@ tags:
   - life 
 ---
 
+#### 2018/09/10
+1. `diet`
+2. `differ`
+3. `difference`
+4. `different`
+5. `differentiate`
+6. `difficult`
+7. `difficulty`
+8. `diffuse`
+9. `dig`
+10. `digest`
+11. `digtal`
+12. `dignity`
+13. `dilemma`
+14. `diligent`
+15. `dilute`
+16. `dim`
+17. `dimension`
+18. `dimmish`
+19. `dinner`
+20. `dioxide`
+21. `direct`
+22. `direction`
+23. `directly`
+24. `director`
+25. `directory`
+26. `dirt`
+27. `disable`
+
 #### 2018/09/08
 1. `desert`
 2. `deserve`
