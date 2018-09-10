@@ -5,6 +5,37 @@ tags:
   - life 
 ---
 
+#### 2018/09/11
+1. `disappear`
+2. `disappoint`
+3. `disaster`
+4. `discard`
+5. `discern`
+6. `discipline`
+7. `disclose`
+8. `discourage`
+9. `discourse`
+10. `discover`
+11. `discovery`
+12. `discriminate`
+13. `discuss`
+14. `disease`
+15. `disgrace`
+16. `disguise`
+17. `dislike`
+18. `dismiss`
+19. `disorder`
+20. `disperse`
+21. `displace`
+22. `display`
+23. `dispose`
+24. `disposition`
+25. `dispute`
+26. `disregard`
+27. `disrupt`
+28. `dissolve`
+29. `distance`
+
 #### 2018/09/10
 1. `diet`
 2. `differ`
