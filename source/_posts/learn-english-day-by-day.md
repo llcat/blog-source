@@ -5,7 +5,39 @@ tags:
   - life 
 ---
 
-#### 2018/09/11
+#### 2018/09/11(晚)
+1. `distant`
+2. `distinct`
+3. `distinction`
+4. `distinguish`
+5. `distort`
+6. `distract`
+7. `distribute`
+8. `district`
+9. `disturb`
+10. `disturbance`
+11. `ditch`
+12. `diverse`
+13. `diversion`
+14. `divert`
+15. `divide`
+16. `dividend`
+17. `division`
+18. `divorce`
+19. `dock`
+20. `do`
+21. `doctor`
+22. `document`
+23. `documentray`
+24. `doll`
+25. `dollar`
+26. `domain`
+27. `dome`
+28. `domestic`
+29. `dominant`
+30. `dominate`
+
+#### 2018/09/11(早)
 1. `disappear`
 2. `disappoint`
 3. `disaster`
