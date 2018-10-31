@@ -4,6 +4,7 @@ date: 2018-07-24 06:56:48
 tags:
   - life 
 ---
+
 #### 2018/09/26(evening)
 1. `dry`
 2. `dubious`
@@ -525,75 +526,155 @@ tags:
 
 #### 2018/07/27
 1. `ally`
+   - n. a state formally cooperating with another for a military or other purpose, typically by treaty
+   - v. combine or unite a resource or commodity with (other) for mutual benefit
 2. `almost`
+   - adv. not quite, very nearly
 3. `alone`
+   - adj. having no one else present;on one's own
+   - adv. indicating that something is confined to the specified subject or recipient
 4. `along`
+   - adv. in or into company with others
+   - prep. moving in a constant direction on (a path or any more or less horizontal surface)
 5. `alongside`
+   - prep. close to the side of; next to
 6. `alphabet`
+   - n. a set of letters or symbols in a fixed order,used to represent the basic sounds of a language,in particular, the set of letters from A to Z
 7. `already`
+   - adv. before or by now or the time in question
 8. `also`
+   - adv. in addition; too
 9. `alter`
+   - v. change or causeto change in character or composition,typically in a comparatively small but significant way.
 10. `alternate`
+   - adj. every other;every second
+     adj. taking the place of; alternative
+   - v. occur in turn repeatedly
+   - n. a person who acts as deputy or substitute
 11. `alternative `
+   - adj. (of one or more things)available as another possibility
+   - n. one of two or more available possibilities
 12. `although`
+   - conj. in spite of the fact that; even though
 13. `altitude`
+   - n. 经度
 14. `altogether`
+   - v. 一起
 15. `always`
+   - adj. 经常的
 16. `amateur`
+   - ?
 17. `amaze`
+   - v. 惊讶
 18. `ambiguous`
+   - ?
 19. `ambition`
+   - n. 野心
 20. `ambitious`
+   - adj. 有野心的
 21. `ambulance`
+   - n. 救护车
 22. `amiable`
+   - adj. 动画的
 23. `amid`
+   - ?
 24. `among`
+   - adv. 在其间
 25. `amount`
+   - v. 统计
 26. `ample`
+   - ?
 27. `amuse`
+   - ?
 28. `analogy`
+   - n. 分析
 29. `analogue`
+   - ？
 30. `analyse`
+   - v. 分析
 31. `analysis`
+   - ?
 32. `analytic`
+   - ?
 33. `ancestor`
+   - n. 祖先
 34. `anchor`
+   - n. 锚
 35. `ancient`
+   - adj. 远古的
 36. `and`
+   - ？和
 37. `anecdote`
+   - ？
 38. `angel`
+   - n. 角度
 39. `anger`
+   - ？
 40. `angle`
+   - n. 天使
 41. `angry`
+   - v. 生气
 42. `animal`
+   - n. 动物
 43. `announce`
+   - v. 宣布
 44. `annoy`
+   - v. 恼怒
 45. `annual`
+   - ？
 46. `anonymous`
+   - adj. 匿名的
 47. `anthor`
+   - n. 作者
 48. `answer`
+   - n. 答案
 49. `ant`
+   - n. 蚂蚁
 50. `anticipate`
+   - v. ？
 51. `antique`
+   - ？
 52. `anxiety`
+   - n. 焦虑
 53. `anxious`
+   - adj. 焦虑的
 54. `any`
+   - ？任何的
 55. `anyone`
+   - ？任何人
 56. `anything`
+   - ？任何事情
 57. `anyway`
+   - adv. 不管怎样
 58. `anywhere`
+   - adv. 无论何地
 59. `apart`
+   - v. 分开
 60. `apartment`
+   - n. 单位
 61. `apologize`
+   - v. 道歉
 62. `aplogy`
+   - n. 致歉
 63. `apparatus`
+   - ？
 64. `apparent`
+   - adj. 显而易见的
 65. `appeal`
+   - v. 呼吁，号召
 66. `appear`
+   - v. 出现
 67. `appearance`
+   - n. 表面
 68. `appetite`
+   - ？
 69. `apple`
+   - n. 苹果
 70. `appliance`
+   - ？
+
+<font color="blue">review at 2018/10/09</font>
+
 
 #### 2018/07/25
 1. `active`

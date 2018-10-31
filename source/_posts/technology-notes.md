@@ -8,6 +8,49 @@ tags:
 #### 技术备忘录
 可能是年龄大了，记忆力越来越不好呢，本着好记性不如烂笔头的原则，将一些可能会用到的一些技术方面的杂项记录下来。
 
+#### shell脚本变量的字符替换与截取
+最近在将Jenkins上几个串连在一起工作的Jobs转换成一个Pipeline,看到同事之前写的shell中有一段字符串的变量中字符的替换和截取的功能，之前没见过，整理一下：
+- 字符的替换
+在shell中,使用/来做替换
+说明：/expr1/expr2  使用expr2来替换表达式中匹配到的第一个expr1
+     //expr1/expr2 使用expr2来替换表达式中匹配到的所有expr1 
+```sh
+# eg: 替换 foo/bar/nav为foo:bar:nav
+s1 = "foo/bar/nav"
+s2 = ${s1//\//\:}
+# eg: 替换 abbc 为 acbc
+s1 = "abbc"
+s2 = ${s1/a/c}
+# eg: 替换 abbc 为 accc
+s1 = "abbc"
+s2 = ${s1//a/c}
+```
+- 两端截取
+在shell中，使用#完成匹配到某个字符后右端的截取(抛弃匹配到的左边的内容,包括该字符), 使用%完成匹配到某个字符后左端的截取(抛弃匹配到的右边的内容，包括字符)
+说明：#expr 抛弃匹配到的第一个expr的左边内容,包括expr
+     ##expr 抛弃匹配到的最后一个expr的左边内容,包括expr
+     %expr 抛弃匹配到的最后一个expr的右边的内容，包括expr
+     %%expr 抛弃匹配到的第一个expr的邮编的内容,包括expr
+```sh
+# eg: 以 /foo/bar/nav/my.test.txt 为例
+s1="/foo/bar/nav/my.test.txt"
+# s2="foo/bar/nav/my.test.txt"
+s2=${s1#*/}
+# s3="my.test.txt"
+s3=${s1##*/}
+# s4="/foo/bar/nav/my.test"
+s4=${s1%.*}
+# s5="/foo/bar/nav/my"
+s5=${s1%%.*}
+```
+- 位置截取
+在shell中使用:完成字符中任意位置的截取某长度的字符串
+说明：${str:pos1:length}
+```sh
+# eg: /foo/bar/nav 截取其中的bar
+s1="/foo/bar/nav"
+s2=${s1:5:3}
+```
 #### 协调世界时(UTC) 1970/01/01 00:00:00
 如果大家有使用过一些编程语言的Date相关的API,一定会看到文档中会提到的一个特殊的时间点1970/01/01 00:00:00，以这个时间点为时间原点,加上一个为正数的时间戳(距离时间原点经过的毫秒数)，可以表示时间原点向后的时间，加上一个负数的时间戳，可以表示时间原点之前的时间，我们以js为例(大家有兴趣可以在console下试试)：
 ```js
