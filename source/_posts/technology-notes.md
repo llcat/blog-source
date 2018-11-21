@@ -62,7 +62,7 @@ d0.getTime() - d1.getTime()
 d2.getTime() - d1.getTime()
 // output: 86400000
 ```
-那么86400000是一个什么值呢？其实算来也就是间隔一天的毫秒数呢，即1*24*60*60*1000
+那么86400000是一个什么值呢？其实算来也就是间隔一天的毫秒数呢，即1x24x60x60x1000
 
 知道了时间戳的概念，我们只要基于某个时间原点，加上时间戳就可以推算出任意的一个时间，所以时间原点是一个什么值，只是我们计算的一个基点而已，但是在计算机的世界中，综合UNIX操作系统和计算机产生的年代等因素，大家统一以1970-01-01 00:00:00作为标准的时间原点。
 
@@ -308,6 +308,16 @@ examples:
     #define HDR "default.h"
 #endif
 #include HDR
+```
+
+#### 使用git merge后会丢失Change-Id的问题
+公司内部是使用gerrit管理源码的，我在本地做merge分支操作时，git在merge成功后自动帮我进行commit操作，但是这笔commit丢失了相关的Change-Id的信息，这是往gerrit服务器上push代码时必要的信息，否则会push不上去，针对这个问题，我们在merge后自己来手动commit解决，如下:
+
+```sh
+# 合并分支但不提交
+git merge {branch_name} --no-commit
+# 手动提交
+git commit
 ```
 
 #### git clone速度较慢

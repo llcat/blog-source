@@ -2,8 +2,8 @@
 title: learn-vue.js
 date: 2018-08-23 22:25:30
 tags:
-  - front end
   - vue.js
+categories: front-end
 ---
 
 #### Vue.JS Study Note
