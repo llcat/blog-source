@@ -14,7 +14,7 @@ categories: css3
 - 什么场景下我们可以使用弹性盒子？
 
 一开始在接触到弹性盒子布局时，我内心是带着上面这些疑问的，不同于android提供给我们各种类型的layout(eg: LinearLayout, RelativeLayout, FrameLayout, ConstraintLayout...)，在之前的web前端页面的开发中，以我有限的css开发经验，基本上是基于文档流(行级元素和块级元素)并结合float及position属性来完成节点的布局，暂且不说这种方式的好坏，十几年来我们一直也是这样做的，css同样提供了新的布局方式供我们使用，也就是我们今天要说的主角-弹性盒子（Flex Box)。
-
+<!--more-->
 > **推荐阅读文档**
 > - [MDN CSS Introduction](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS) - 如果你对CSS不熟可以先看看这里
 > - [CSS Flex Box](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Flexbox) - 弹性盒子介绍

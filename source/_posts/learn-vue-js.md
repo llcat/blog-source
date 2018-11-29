@@ -9,6 +9,8 @@ categories: front-end
 #### Vue.JS Study Note
 最近新的项目需要将原有的一个管理app替换为web app的形式以便于跨多个平台使用，在技术选型上我决定采用`vue.js+element ui+echarts.js`的方案去做。因此开一篇学习笔记用来整理和记录知识点。
 
+<!--more-->
+
 ##### 1. Introduction
 
 ##### 2. 组件基础

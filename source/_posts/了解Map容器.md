@@ -15,6 +15,8 @@ categories: java
 - [关于散列和散列码](#about_hash)
 - [更进一步,如何写个HashMap容器](#my_hash_map)
 
+<!--more-->
+
 <h5 id = my_map>写一个自己的简单map</h5>
 
 我们来深入看看Map容器，他是如何工作的，有哪些类型的Map容器，我们如何选择自己需要的Map容器。

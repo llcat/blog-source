@@ -8,6 +8,8 @@ categories: database
 #### LeetCode SQL类题目总结
 LeetCode上非付费的SQL题目就那么几道,这几天花时间刷了一遍，顺便总结下里面涉及到的知识点。
 
+<!--more-->
+
 #### Easy Level
 ##### 175. Combine Two Tables
 Table: Person

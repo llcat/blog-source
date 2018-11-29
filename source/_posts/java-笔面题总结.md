@@ -18,6 +18,8 @@ categories: java
 - [框架相关](#framework)
 - [设计模式相关](#design_pattern)
 
+<!--more-->
+
 <h4 id='java'>Java相关</h4>
 
 - based knowledge

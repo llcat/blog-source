@@ -4,7 +4,9 @@ date: 2018-07-24 06:56:48
 tags:
   - life 
 ---
-
+#### English Vocabulary
+use for recite english vocabulary
+<!--more-->
 #### 2018/09/26(evening)
 1. `dry`
 2. `dubious`
