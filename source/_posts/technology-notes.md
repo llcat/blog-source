@@ -10,6 +10,20 @@ tags:
 
 <!--more-->
 
+#### 使用nmcli管理网络连接
+最近需要将远程的几台server互切一下ip,于是在网上找了一下远程切ip的方法，基本大体上可以归为修改network相关的配置文件，或者是使用ifconfig等工具修改，但我个人感觉都不是很灵活和方便，这里推荐一款ubuntu上自带的网络连接命令行管理工具`nmcli`,添加，删除和修改网络连接配置非常简单，这个工具支持的功能非常多，使用时注意活用`tab`和`help`。
+
+```sh
+# 添加一个以太网类型的连接，并指定连接名称，ip地址，网关地址。
+sudo nmcli connection add type ethernet autoconnect yes ifname "*" con-name 70.188 ip4 10.203.70.188/23 gw4 10.203.70.1
+# 修改连接的dns server地址。
+sudo nmcli connection modify 70.188 ipv4.dns 10.202.2.102
+# 切换到刚才建立的网络连接
+sudo nmcli connection up 70.188
+# 删除刚建立的网络连接
+sudo nmcli connection delete 70.188
+```
+
 #### shell脚本变量的字符替换与截取
 最近在将Jenkins上几个串连在一起工作的Jobs转换成一个Pipeline,看到同事之前写的shell中有一段字符串的变量中字符的替换和截取的功能，之前没见过，整理一下：
 - 字符的替换
