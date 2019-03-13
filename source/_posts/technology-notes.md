@@ -1,20 +1,48 @@
 ---
-title: technology_notes
+title: 技术备忘录
 date: 2018-08-05 22:28:54
 tags:
   - technology
 ---
 
-#### 技术备忘录
+#### 前言
 可能是年龄大了，记忆力越来越不好呢，本着好记性不如烂笔头的原则，将一些可能会用到的一些技术方面的杂项记录下来。
 
 <!--more-->
+
+#### 关于python操作excel
+最近接到一个任务是从zip档中解压出log文件，提取出相关的信息后填充到一个模板Excel表格中。考量了需求和自己技能栈后决定选用python完成自动化的工作及提供一个本地http服务器，用vue写一个页面提供配置和简化操作(提供给测试人员使用,有个UI可能更好上手)。在查阅了相关资料后选用`openpyxl`这个包来处理excel。
+> `openpyxl`还在稳定的更新中，相较于以前使用过的`xlrd`和`xlwt`等工具提供了更完备的功能，这里给出参考
+> [Python Excel](http://www.pythonexcel.com/)
+> [openpyxl doc](https://openpyxl.readthedocs.io)
+
+在实现过程中碰到了两个问题
+- 模板template.xlsm这种文件格式是默认启用了宏的
+  对于这种情况，我们使用`openpyxl`加载文件时需要指定`keep_vba`的参数位`True`,否则新保存的后缀为`*.xlsm`文件不能打开，Excel提示文件损坏。
+  ```py
+  wb = openpyxl.load_workbook("template.xlsm", keep_vba=True, )
+  wb.save("test1.xlsm")
+  ```
+- 模板template.xlsm中带有图像，另存为新文件后图像会消失
+  官方文档中也有提到openpyxl暂时不会读取已有文件中的图像和图表信息，所以在打开后在保存时会丢失图像。
+  {% asset_img openpyxl_doc_img.png openpyxl_doc_img %}
+  我查阅相关api时原本想用它提供的work_sheet.add_image(img, position)来手动解决，这个时候需要安装`pillow`作为依赖。
+  ```py
+  from openpyxl.drawing.image import Image
+  wb = openpyxl.load_workbook("template.xlsm", keep_vba=True, )
+  ws = wb["sheet1"]
+  ws.add_image(Image("test.png"), "A1")
+  wb.save("test1.xlsm")
+  ```
+  但实际上安装`pillow`包后，不在需要其他手动的操作，模板文件中的图片也不会在丢失，`openpyxl`帮我们做了处理，可能跟版本有关系，这应该是后来更新的功能，我用的是当前的最新版本`2.6.1`。
 
 #### 使用nmcli管理网络连接
 最近需要将远程的几台server互切一下ip,于是在网上找了一下远程切ip的方法，基本大体上可以归为修改network相关的配置文件，或者是使用ifconfig等工具修改，但我个人感觉都不是很灵活和方便，这里推荐一款ubuntu上自带的网络连接命令行管理工具`nmcli`,添加，删除和修改网络连接配置非常简单，这个工具支持的功能非常多，使用时注意活用`tab`和`help`。
 
 ```sh
 # 添加一个以太网类型的连接，并指定连接名称，ip地址，网关地址。
+# 这里注意,如果你的设备上有多张网卡，你想替换掉现有的连接，ifname(interface name)一定不要用*
+# 使用你当前连接正在使用的ifname,这样在后续up切换时才能正常替换掉连接
 sudo nmcli connection add type ethernet autoconnect yes ifname "*" con-name 70.188 ip4 10.203.70.188/23 gw4 10.203.70.1
 # 修改连接的dns server地址。
 sudo nmcli connection modify 70.188 ipv4.dns 10.202.2.102
@@ -200,6 +228,7 @@ sudo apt-get install dconf-editor
 4. 使用win10远程桌面连接
 选择vnc-any,输入相关信息连接即可
 {% asset_img win_remote_desktop.PNG win_remote_desktop %}
+
 #### docker配置
 记录以下常用的docker常会用到的配置
 - 修改Docker daemon默认存储位置
@@ -221,12 +250,30 @@ sudo apt-get install dconf-editor
   ```
   在`daemon.json`中对docker daemon作配置是官方推荐的做法。除此之外，还有启动命令行指定参数等，但这个做法显然比较简单。
 
+- 给docker container配置HTTP/HTTPS代理
+  请参考[官方文档](https://docs.docker.com/network/proxy/),Docker 17.07前的版本只能手动指定，之后更高的版本可以在配置文件中统一配置，容器启动后docker会自动帮你设置这些环境变量。下面给出在配置文件中设置的方法，这重方式比较方便。(just for linux,win版本的gui设置比较容易找到)
+  在`~/.docker/config.json`文件中添加以下内容
+  ```json
+  {
+    "proxies":
+        {
+            "default":
+            {
+                "httpProxy": "http://ip:port",
+                "httpsProxy": "http://ip:port",
+                "noProxy": "*.test.example.com,.example2.com,10.203.78.71"
+            }
+        }
+  }
+  ```
+  这样就给container配置好了http/https代理
+
 - 给docker daemon配置代理HTTP/HTTPS代理
   如果你当前的环境在公司内网中，需要通过代理才能访问Internet,那么你想要从外部pull镜像时，也要给你的docker daemon单独配置代理，docker daemon是在启动时根据`HTTP_PROXY`,`HTTPS_PROXY`,`NO_PROXY`三个环境变量来配置HTTP/HTTPS代理的，要配置docker daemon的代理，我们需要做如下修改：
   1. 在systemd目录下为docker创建目录
   `sudo mkdir -p /etc/systemd/system/docker.service.d/`
   2. 创建http-proxy.conf或https-proxy.conf文件
-  `touch /etc/syatemd/system/docker.service.d/http-proxy.conf`
+  `touch /etc/systemd/system/docker.service.d/http-proxy.conf`
   并在文件中添加下面的配置
   ```
   [Service]

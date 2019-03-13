@@ -2,9 +2,7 @@
 title: java 笔面题总结
 date: 2017-04-20 00:03:34
 tags:
-  - database
-  - web
-  - java
+  - interview
 categories: java
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: first-meet-with-pointer
+title: 初识C语言指针
 date: 2018-11-26 10:46:26
 tags:
   - pointer

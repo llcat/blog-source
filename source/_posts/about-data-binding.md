@@ -1,5 +1,5 @@
 ---
-title: about-data-binding
+title: 关于前端数据绑定
 date: 2018-11-19 08:43:10
 tags:
   - vue.js
