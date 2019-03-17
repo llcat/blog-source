@@ -20,6 +20,16 @@ categories: front-end
 3. 文章应该以怎样的形式呈现？
   应该是以问答的形式来编写，首先提出问题，然后做出解答。对于需要花费较大篇幅回答的问题，可以另开文章以便给出详细的解析，在问题下给出链接即可。
 
-> 我准备参考github上的两个开源项目，如有雷同，纯属copy
-> - ss
-  
+> 我准备参考github上的关于前端面试的几个开源项目，如有雷同，纯属copy
+> - [FE Interview Question](https://github.com/h5bp/Front-end-Developer-Interview-Questions)
+> - [The Answer of FE InterView Question](https://github.com/yangshun/front-end-interview-handbook)
+> - [The Preparation Guide for FE InterView](https://github.com/Jobeir/front-end-interview-preparation-guide)
+> - [The Modern JavaScript Tutorial](https://github.com/iliakan/javascript-tutorial-en)
+
+#### ES6新特性
+
+#### 前端模块化有那些规范
+
+#### 你知道盒子模型吗?
+
+#### 

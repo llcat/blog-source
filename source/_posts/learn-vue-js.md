@@ -1,5 +1,5 @@
 ---
-title: learn-vue.js
+title: vue.js笔记
 date: 2018-08-23 22:25:30
 tags:
   - vue.js
@@ -70,4 +70,44 @@ categories: front-end
     </blog-post>
   </div>
   ```
-- 
+
+##### h => h(App)是什么？
+用vue-cli工具初始化的`main.js`中有这样一段代码
+```javascript
+new Vue({
+  render: h => h(App)
+}).$mount('#app')
+```
+看到这我其实是有疑问的, `h => h(App)`到底是指什么？那么查过官方文档后知道，在初始化一个Vue实例时，我们可以使用`render`函数渲染元素以代替template。Vue在调用render函数时会传入`createElement`这个函数做参数。那么实际上面的代码可以写成这样。
+
+```javascript
+new Vue({
+  render: function(createElement) {
+    createElement(App)
+  }
+})
+// 简化为es箭头函数的写法就是这样
+new Vue({
+  render: createElement => createElement(App)
+})
+```
+那么实际上`h`只是render函数参数名称的简写而已,你甚至可以写成`a`,`b`或任意的名字也可以。但是`h`这个简写实际上是有含义的，我查阅资料看到有人引用even you的解释如下。
+>It comes from the term "hyperscript", which is commonly used in many virtual-dom implementations. "Hyperscript" itself stands for "script that generates HTML structures" because HTML is the acronym for "hyper-text markup language".
+>"h"这个缩写来源于"hyperscript"这个术语，这个术语被广泛应用于许多的虚拟dom的实现中，由于HTML是超文本标记语言的首字母缩写，"hyperscript"一词表示"用来生成HTML结构的脚本"
+
+##### @vue/cli 3.0生成的项目怎么使用sass?
+`@vue/cli`生成的项目默认是包含了常见的各种css预处理器和它们的loader的，如less,sass,stylus和postcss等,所以我们无需重新安装这些东西，可是如果我们想给这些loader设置一些配置时我们应该怎么做呢？
+我们应该在与`webpack.config.js`同级的目录下创建`vue.config.js`文件，并增加配置项。
+比如我想在每个scss文件中自动导入包含常用变量的文件，这样省去手动import的过程。在`vue.config.js`中加入下面的内容。
+```js
+module.exports = {
+    css: {
+        loaderOptions: {
+            sass: {
+                data: `@import "@/styles/variables.scss";`
+            }
+        }
+    }
+}
+```
+> [参考文档](https://cli.vuejs.org/zh/guide/css.html#css-modules)
