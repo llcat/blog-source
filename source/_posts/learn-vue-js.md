@@ -96,7 +96,11 @@ new Vue({
 >"h"这个缩写来源于"hyperscript"这个术语，这个术语被广泛应用于许多的虚拟dom的实现中，由于HTML是超文本标记语言的首字母缩写，"hyperscript"一词表示"用来生成HTML结构的脚本"
 
 ##### @vue/cli 3.0生成的项目怎么使用sass?
-`@vue/cli`生成的项目默认是包含了常见的各种css预处理器和它们的loader的，如less,sass,stylus和postcss等,所以我们无需重新安装这些东西，可是如果我们想给这些loader设置一些配置时我们应该怎么做呢？
+vue-cli生成的项目默认是支持Sass,Less,Stylus等Css预处理器的，因为它默认在webpck.config.js中就默认配置了这些预处理器。我们在创建完工程后只需要安装预处理器和相关的loader即可。比如我要安装sass
+```
+npm install -D sass node-sass
+```
+可是如果我们想给这些loader设置一些配置时我们应该怎么做呢？
 我们应该在与`webpack.config.js`同级的目录下创建`vue.config.js`文件，并增加配置项。
 比如我想在每个scss文件中自动导入包含常用变量的文件，这样省去手动import的过程。在`vue.config.js`中加入下面的内容。
 ```js
