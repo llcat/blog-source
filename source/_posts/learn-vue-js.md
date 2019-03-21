@@ -98,7 +98,7 @@ new Vue({
 ##### @vue/cli 3.0生成的项目怎么使用sass?
 vue-cli生成的项目默认是支持Sass,Less,Stylus等Css预处理器的，因为它默认在webpck.config.js中就默认配置了这些预处理器。我们在创建完工程后只需要安装预处理器和相关的loader即可。比如我要安装sass
 ```
-npm install -D sass node-sass
+npm install -D sass-loader node-sass
 ```
 可是如果我们想给这些loader设置一些配置时我们应该怎么做呢？
 我们应该在与`webpack.config.js`同级的目录下创建`vue.config.js`文件，并增加配置项。
@@ -115,3 +115,69 @@ module.exports = {
 }
 ```
 > [参考文档](https://cli.vuejs.org/zh/guide/css.html#css-modules)
+
+##### Vue工程怎么动态的使用本地图片。
+在我们编写组件时，有时候需要在组件中加载一些本地的图片，那么如果我们写成工作目录下的相对路径并绑定到`<img :src="path">`时是不生效的。因为src的信息是在程序build完成后动态附加的，也就是我们在build应用时webpack根本就不会处理`<img>`标签引入的资源(因为压根就没有引入)。所以我们有两种解决方式。
+- 手动import图片资源
+```html
+<template>
+    <nav class="nav-container">
+        <nav-item v-for="item in items" :imgSrc="item.imgSrc" :text="item.text" :key="item.id">
+        </nav-item>
+    </nav>
+</template>
+
+<script>
+    import NavItem from './NavItem';
+    import pimg from '@/assets/img/personal_info.png'
+    export default {
+        name: "NavBar",
+        components: {
+            NavItem,
+        },
+        data(){
+            return {
+                items: [
+                    {
+                        id: 1,
+                        imgSrc: pimg,
+                        text: "个人信息"
+                    }
+                ]
+            }
+        }
+    }
+</script>
+```
+
+- 使用require引入资源
+注意require仅接收一串字符，不接受任何的变量。
+```html
+<template>
+    <nav class="nav-container">
+        <nav-item v-for="item in items" :imgSrc="item.imgSrc" :text="item.text" :key="item.id">
+        </nav-item>
+    </nav>
+</template>
+
+<script>
+    import NavItem from './NavItem';
+    export default {
+        name: "NavBar",
+        components: {
+            NavItem,
+        },
+        data(){
+            return {
+                items: [
+                    {
+                        id: 1,
+                        imgSrc: require('@/assets/img/personal_info.png'),
+                        text: "个人信息"
+                    }
+                ]
+            }
+        }
+    }
+</script>
+```
