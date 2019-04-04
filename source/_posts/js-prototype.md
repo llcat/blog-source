@@ -6,7 +6,7 @@ categories: front-end
 ---
 
 #### 前言
-我想大多数初级前端开发者一定为JS的原型概念困惑过，什么是原型链呀？什么是原型？JS中是怎样实现基于原型的继承的?__proto__是什么？prototype又是什么？别着急，接下来我们一步步的来学习这些东西。
+我想大多数前端开发者一定为JS的原型概念困惑过，什么是原型链呀？什么是原型？JS中是怎样实现基于原型的继承的?__proto__是什么？prototype又是什么？别着急，接下来我们一步步的来学习这些东西。
 
 <!-- more -->
 
@@ -15,7 +15,7 @@ categories: front-end
 
 #### 你分的清__proto__和prototype的区别吗?
 - __proto__
-在浏览器的执行环境中，任何一个对象都有一个__proto__的属性，但是这个并不是ecma的标准，只是几大浏览器默认支持的一个属性，所以我们在实际的生产环境中，我们要谨慎使用这个属性，这个属性是用于表示隐式原型链的(implicit prototype link)的，指向了构造函数的prototype这个对象。在ecma中有[[prototype]]这个隐藏属性, 在ES5之后，官方提供了一个正式的方法`Object.getPrototypeOf()`来访问这个属性。
+在浏览器的执行环境中，任何一个对象都有一个__proto__的属性，但是这个并不是ecma的标准，只是几大浏览器默认支持的一个属性，所以我们在实际的生产环境中，我们要谨慎使用这个属性，这个属性是用于表示隐式原型链的(implicit prototype link)的，指向了构造函数的prototype这个对象。在ecma中有定义[[prototype]]这个隐藏属性, 在ES5之后，官方提供了一个正式的方法`Object.getPrototypeOf()`来访问这个属性。
 ```js
 function Student(name, age){
     this.name = name;

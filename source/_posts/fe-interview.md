@@ -28,8 +28,45 @@ categories: front-end
 
 #### ES6新特性
 
+#### JS中有哪些数据类型
+Number, Boolean, String, Null, Undefine, Object, Symbol
+
 #### 前端模块化有那些规范
+AMD, CMD, CommonJs, ES的module(import, export)
 
-#### 你知道盒子模型吗?
+#### JS的异步加载有那几种方式
 
-#### 
+#### 说一下你了解的盒子模型
+IE的怪异盒子模型, 标准盒子模型(content, padding, border, margin)
+
+#### 你用过box-sizing属性吗
+content-box, border-box
+
+#### 说一下你用过的伪类
+
+#### a标签几个伪类选择器
+
+#### 你用过那些CSS选择器
+
+#### 说一下CSS各个选择器的优先级
+
+#### 怎么清除浮动？
+[清除浮动的4种方式](https://juejin.im/post/59e7190bf265da4307025d91)
+[CSS浮动和清除浮动](https://juejin.im/entry/580479b85bbb50005b7c5083)
+
+#### 请使用正则表达式匹配一个身份证号码是否正确
+[正则匹配身份证](https://juejin.im/post/5aa8d89af265da23866f9669)
+
+#### em和rem单位的区别
+
+#### 浏览器的事件机制
+- 怎么实现点击页面任何一个位置，alert点击的标签名字？
+这个实现其实很简单，主要是考察对浏览器事件机制的熟悉程度,
+查阅文档可知，浏览器的事件分为三个阶段,Capturing -> At-Target -> Bubbling
+默认的Event在构造时是设置bubbles属性为false的。
+```js
+document.addEventListener("click",(e)=>{alert(e.target.tagName)})
+```
+
+
+

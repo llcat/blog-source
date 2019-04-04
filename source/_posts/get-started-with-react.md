@@ -2,7 +2,7 @@
 title: React 入门
 date: 2018-11-29 10:54:35
 tags: react.js
-categories: translate
+categories: translation
 ---
 
 #### Getting Started with React
