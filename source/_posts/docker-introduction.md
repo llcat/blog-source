@@ -1,7 +1,7 @@
 ---
 title: docker-introduction
 date: 2018-04-27 14:06:59
-tags:
+categories: docker
 ---
 
 #### 起步

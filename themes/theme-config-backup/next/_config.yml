@@ -139,7 +139,7 @@ menu:
   home: / || home
   #about: /about/ || user
   tags: /tags/ || tags
-  #categories: /categories/ || th
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -202,7 +202,7 @@ links_title: Links
 links_layout: block
 #links_layout: inline
 links:
-  jingfengji(Unity): https://jingfengji.github.io
+  jingfengji: https://jingfengji.github.io
   matthew: https://matthewdev.tech
 
 # Sidebar Avatar

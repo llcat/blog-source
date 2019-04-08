@@ -1,15 +1,15 @@
 ---
-title: 浏览器视窗(viewport)的二三事(part one)
+title: 浏览器视口(viewport)的二三事(part one)
 date: 2019-04-04 10:33:47
 tags: viewport
 categories: translation
 ---
 
-#### 浏览器视窗的二三事(part one)
+#### 浏览器视口的二三事(part one)
 
 **在这个小系列中我将会解释viewports和一些重要的元素(比如`<html>`, window和screen)的宽度是如何工作的**
 
-这篇文章是介绍pc端浏览器的视窗，它的目的是为后续讨论相似的mobile端浏览器的视窗概念打基础。大多数的web开发者可能已经对pc端的视窗概念很清楚呢，在mobile端我们会发现有相同的概念，但是更加复杂。所以接下来我们会预先讨论一些大家都知道的术语，掌握这些术语对后续理解mobile端的视窗概念会很有帮助。
+这篇文章是介绍pc端浏览器的视口，它的目的是为后续讨论相似的mobile端浏览器的视口概念打基础。大多数的web开发者可能已经对pc端的视口概念很清楚呢，在mobile端我们会发现有相同的概念，但是更加复杂。所以接下来我们会预先讨论一些大家都知道的术语，掌握这些术语对后续理解mobile端的视口概念会很有帮助。
 
 <!-- more -->
 
@@ -25,7 +25,7 @@ categories: translation
 
 假设你给某个元素128px的宽度，你的显示器的设备像素宽是1024px，最大化显示你的浏览器窗口时，理论上是这样的8个元素刚好沾满你屏幕的宽度。
 验证一下：(我的屏幕分辨率宽为1440px,我给每个元素定宽为144px,使用border-box,需要10个元素)
-{% asset_img ten_item.png ten_item %}
+{% asset_img ten_element.png ten_element %}
 确实，在缩放为100%时，一行排10个
 代码如下:
 ```html
@@ -91,6 +91,167 @@ categories: translation
 100%缩放的概念在接下来的一些概念解释中非常有用，但在日常的工作中你无须过于担心缩放带来的影响，在PC端我们一般是在100%的缩放下测试我们的网站，即使用户进行了放大或缩小的操作，神奇的CSS像素也会确保你的布局保持原有的比例。
 
 #### 屏幕尺寸(Screen size)
+让我们来看一些实际的测量尺寸，我们首先来看看`screen.width`和`screen.height`，它们用来表示一个用户屏幕的所有的宽和高。这个尺寸是基于设备像素测量的，因为它永远不会变，它们是显示器的特性而不是浏览器的。
+{% asset_img monitor_wh.png monitor_wh %}
+
+非常有趣，但是我们如何处理这些信息？一般来说，什么都不用做，用户的显示器的尺寸对我们一点都不重要，除非你想测量他并用在一些统计数据库中。
+
+#### 窗口尺寸(Window size)
+相反，我们实际上想知道的是一个浏览器窗口的内部尺寸，这个尺寸会确切的告诉你当前有多少可用空间用于你的CSS布局，你可以通过`window.innerWidth`和`window.innerHeight`来获得窗口的尺寸。
+{% asset_img desktop_inner.jpg desktop_inner %}
+
+显然，浏览器窗口的内部尺寸是基于CSS像素测量的,你需要知道在浏览器窗口中有多少空间放置你的布局，这个尺寸会随着用户的放大而缩小，如果用户进行了放大操作，在浏览器窗口中你能使用的空间会变小，反映在数值上就是`window.innerWidth`和`window.innerHeight`这两个值会减小。
+
+(在桌面上比较特殊的是Opera浏览器，它的`window.innerWidth/Height`不会随着用户放大而减小，因为他是基于设备像素测量的，这在桌面端可能令人有点恼火，但是这在手机端却是致命的缺陷，在后面我们会说明)
+
+{% asset_img desktop_inner_zoomed.jpg desktop_inner_zoomed %}
+
+<font color="red">注意：</font>这两个属性测量的宽高是包含滚动条的，滚动条被视为窗口内部高度的一部分(由于一些历史原因)
+
+我们来验证一下，大家可以copy下面的代码试一下。
+1. 直接缩小窗口，两个值会发生变化
+2. 放大或缩小页面到，两个值会改变
+如我的浏览器中，100%缩放时宽高是1440*789，放大页面到200%，宽高是720*394，刚好减小2倍，缩小页面到50%，宽高是2880*1578，刚好增大两倍。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test window's inner Size</title>
+    <style type="text/css">
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        .reference {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="reference">
+        100px
+    </div>
+</body>
+<script type="text/javascript">
+document.addEventListener("click", (e)=>{
+    alert(`window.innerWidth:${window.innerWidth}\nwindow.innerHeight:${window.innerHeight}`)
+})
+</script>
+</html>
+```
+
+#### 滚动偏移量(Scrolling offset)
+`window.pageXOffset`和`window.pageYOffset`,包含了一个文档水平和竖直方向上的滚动偏移量，因此你可以知道用户滚动了多少。
+{% asset_img desktop_page.jpg desktop_page %}
+
+这个属性也是基于CSS像素测量的，你可以知道文档向左或向右移动了多少，无论缩放的状态是怎么样的。
+
+理论上，如果用户向上滚动了文档，并进行了放大，那么`window.pageX/YOffset`将会改变。然而，当用户进行缩放时，浏览器会尝试保持页面的缩放的一致性，而保留之前顶部可视的相同的元素在依然在可视页面的顶部(简单解释就是缩放后保证可视区域之前顶部能看到的元素，现在还能看到)，这就会导致pageOffset这个属性不能很好的工作，意味着在实际环境中`window.pageX/YOffset`的值可能不会变化，已经滚出窗口外面的CSS像素基本上保持一致。
+
+{% asset_img desktop_page_zoomed.jpg destop_page_zoomed %}
+
+验证一下,大家可以copy我下面的例子测试一下
+- 滚动后的偏移量
+滚动后的偏移值正常，缩放完成后在滚动不会影响偏移值的大小。
+- 滚动后在放大后偏移不变化
+滚动到某个程度在缩放偏移值确实不变
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #row , #col{
+            display: flex;
+        }
+        #col {
+            flex-direction: column;
+        }
+        .box {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            min-width: 100px;
+            min-height: 100px;
+            border-bottom: 1px solid gray;   
+            border-right: 1px solid gray;   
+        }
+    </style>
+</head>
+<body>
+    <div id="row"></div>
+    <div id="col"></div>
+</body>
+<script type="text/javascript">
+let rowContainer = document.querySelector("#row")
+let columnContainer = document.querySelector("#col")
+
+function addBox(amount){
+    let rowBoxes = ""
+    let colBoxes = ""
+    for(let i=0; i<amount; i++) {
+        rowBoxes += `<div class="box">${i*100}px</div>`
+        colBoxes += `<div class="box">${(i+1)*100}px</div>`
+    }
+
+    rowContainer.innerHTML = rowBoxes;
+    columnContainer.innerHTML = colBoxes;
+}
+addBox(15)
+document.addEventListener("click", (e)=>{
+    alert(`window.pageXOffset:${window.pageXOffset}\nwindow.pageYOffset:${window.pageYOffset}`)
+})
+</script>
+</html>
+```
+
+#### 概念：视口
+在我们继续引入更多的js属性之前，我们不得不引入另一个概念：视口。
+视口的功能就是用来约束`<html>`元素的，`html`元素是你站点最上层的包含块。
+
+这个可能听起来让人迷惑，让我们来举一个实际的例子，假设你现在有一个流体布局，其中一个侧边栏的宽度是10%，现在，当你调整浏览器窗口大小时，侧边栏也会随之等比增大或减小，但实际上是如何工作的呢？
+
+从技术上讲，当侧边栏要从它的父元素获取10%的宽度时会发生什么？当然是从`<body>`标签获取，但是实际上我们并没有给`<body>`指定宽度。所以现在问题变成了`<body>`的宽度是多少呢？
+
+正常来讲，所有的块级元素都是获取它父元素宽度的100%(会有一些意外情况，但我们暂时忽略这些)，所以`<body>`的宽度应该和它的父元素一致，也就是`<html>`元素。
+
+所以`<html>`元素的宽度是多少？它和浏览器的窗口一样宽，这就是为什么你定义的宽度为10%的侧边栏是占据你浏览器窗口宽度的10%，所有的web开发者都非常清楚这一点并使用了这个事实。
+
+你可能不知道它在理论上是如何运作的，理论上，`<html>`元素的宽度是由视口的宽度来约束的，`<html>`元素占据视口宽度的100%。
+
+反过来讲，视口完全可以视为浏览器窗口，它已经被定义成了这样，视口它不是HTML结构的一部分，所以它不受CSS的影响，在桌面浏览器上，它仅仅代表浏览器可视窗口的宽高而已。但是视口的概念在移动端的浏览器上要复杂的多。
+
+##### 结论
+视口的约束会造成一些奇怪的结果，你可以滚动到这个站点(https://www.quirksmode.org/mobile/viewports.html)顶部，尝试放大几倍，以便该站点的内容溢出浏览器的窗口。
+
+现在滚动到右边，可以看到顶部的蓝色导航条已经不能很好的包裹它的内容了。
+{% asset_img desktop_htmlbehaviour.jpg desktop_htmlbehaviour%}
+
+这个行为说明了是视口定义的方式，我给了这个蓝条100%的宽度。100%代表了什么？它表示`<html>`这个元素，也就是视口的宽度，也是浏览器窗口的高度。
+
+当我们使用100%s缩放时一切都是正常的，现在我们尝试放大，导致视口的宽高实际上是小于我们的所有内容宽度的。这本身没什么问题，现在我们的元素溢出了`<html>`元素，并且由于这个元素设置了`overflow: visible`,这意味着溢出的元素无论如何都会显示。
+
+但是蓝色的导航条却不会溢出，由于我给定了它`width:100%`，最终，浏览器会遵循给定的视口宽度来定义蓝色导航条的宽度，而不会去在意这个宽度对于现在来讲是不是窄呢。
+{% asset_img desktop_100percent.jpg desktop_100percent %}
+
+##### 文档宽度(document width?)
+
 
 
 
