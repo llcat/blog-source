@@ -251,9 +251,124 @@ document.addEventListener("click", (e)=>{
 {% asset_img desktop_100percent.jpg desktop_100percent %}
 
 ##### 文档宽度(document width?)
+如果我真的需要知道页面内容的总宽度是多少，包括那些溢出的部分，据我所知，还没有值能直接拿到。(除非你计算这个页面每个元素独立的宽度和边距，但是这很容易出错，恕我直言)
 
+我开始相信我们需要一个javascript的属性能给出文档的宽度，我将它称之为"文档宽度"(document width),显然也是基于CSS像素测量的。
 
+{% asset_img desktop_documentwidth.jpg desktop_documentwidth %}
 
+如果我们觉得这个值不错，为什么不将这个值暴露给CSS呢？我希望我的蓝色导航条的宽度取决于文档的宽度，而不是`<html>`元素的宽度。(这肯定比较棘手，如果不能实现这个功能，我也不会感到惊讶)，浏览器厂商们，你们是怎么看的呢?
+
+#### 测量视口(Measuring the view)
+你可能想要知道一个视口的尺寸，他们可以通过`document.documentElement.clientWidth/Height`拿到。
+
+{% asset_img desktop_client.jpg desktop_client %}
+
+如果你熟悉文档对象模型，你应该知道`document.documentElement`实际上就是`<html>`元素，一个HTMl文档的根节点。但是，视口比`<html>`元素还要高一级，应该说，视口包含着`<html>`元素，所以你给`<html>`元素设置了宽度，是会有一定问题的。(我不推荐这么做，但这也许是一个办法)
+
+比如下面的这种情况，`document.clientWidth/Height`将会给出的是视口的尺寸，而不是`<html>`元素的宽度。(这是一个特殊的规则仅仅对于这个元素的这个属性对，其他的状况下是元素使用的实际宽度)
+
+{% asset_img desktop_client_smallpage.jpg desktop_client_smallpage %}
+
+所以`document.documentElement.clientWidth/Height`也给出了视口的尺寸，无论`<html>`元素的尺寸如何。
+
+验证一下：
+给html一个固定宽高，验证`documentElement.clientWidth/Height`是给出的视口宽高。
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        html, body, h2 {
+            padding: 0;
+            margin: 0;
+        }
+        html {
+            width: 200px;
+            height: 800px;
+            border: 1px solid gray
+        }
+
+    </style>
+</head>
+<body>
+    <h2>test</h2>
+    <p class="msg">Lorem</p>
+</body>
+<script type="text/javascript">
+    document.addEventListener("click",(e)=>{
+        alert(`documentElement.clientWidth:${document.documentElement.clientWidth}\ndocumentElement.clientHeight:${document.documentElement.clientHeight}`)
+    })
+</script>
+</html>
+```
+
+##### 两个属性对的关系(Two property pairs)
+前面不是介绍过视口的尺寸可以由`window.innerWidth/Height`得到吗？嗯，是也不是。
+
+这两个属性对是存在一些正式的区别的，`document.documentElement.clientWidth/Height`是不包含滚动条的大小的，但是`window.innerWidth/Height`是包含滚动条的，显然这点区别看不起来有点吹毛求疵呢。
+
+真实的原因是这两个属性是浏览器战争的产物，在过去，网景(Netscape)只支持`window.innerWidth/Height`而IE只支持`document.documentElement.clientWidth/Height`,随后的浏览器对这两个属性同时支持。
+
+在桌面浏览器上这两个的异同只是很小的一点干扰，但是这对移动端的浏览器却很有用，后面我们会讲到。
+
+#### 测量<html>元素(Measuring the `<html>` element)
+在任何情况下我们都可以通过`clientWidth/Height`获取视口的尺寸，但是我们如何取得html元素的尺寸呢？他们存放在`document.documentElement.offsetWidth/Height`中。
+
+{% asset_img desktop_offset.jpg desktop_offset %}
+
+这个属性可以让你把`<html>`元素当作块级元素访问，如果你设置了宽度，`offsetWidth`将会显示它。
+
+{% asset_img desktop_offset_smallpage.jpg desktop_offset_smallpage %}
+
+#### 事件坐标(Event coordinates)
+接下来我们介绍事件坐标，当一个鼠标事件发生时，会有5个以上的属性值来告诉你事件确切发生的位置。我们只讨论其中比较重要的3个。
+1. `pageX/Y`
+    给出相对于`<html>`元素的坐标位置（CSS像素)
+2. `clientX/Y`
+    给出了相对于视口的坐标位置(CSS像素)
+3. `screenX/Y`
+    给出了相对于屏幕的坐标位置(设备像素)
+
+- pageX/Y
+{% asset_img desktop_pageXY.jpg desktop_pageXY %}
+- clientX/Y
+{% asset_img desktop_clientXY.jpg desktop_clientXY %}
+- screenX/Y
+{% asset_img desktop_screenXY.jpg desktop_screenXY %}
+
+90%的情况下你会使用`pageX/Y`，因为通常我们只想知道与文档的相对位置，10%的情况下你可能会使用到`clientX/Y`，但是基本上你不会感兴趣相对屏幕位置的事件发生的坐标。
+
+#### 媒体查询(Media queries)
+最后，我们来聊一聊媒体查询，想法很简单，就是当页面的尺寸大于，等于，或小于某个确切尺寸时，我们可以定义使用一些定制的CSS样式。举个例子
+```css
+div.sidebar {
+    width: 300px;
+}
+
+@media all and (max-width: 400px) {
+    div.sidebar {
+        width: 100px
+    }
+}
+```
+现在，这个侧边栏宽度是300px,只有当宽度小于400px时，侧边栏的宽度变成100px。
+提一个问题：这个宽度是基于什么测量的？
+这里有两个媒体查询相关的属性:`width/height`和`device-width/height`
+
+1. `width/height`使用的值与`document.documentElement.clientWidth/Height`相同，基于CSS像素工作。
+2. `device-width/height`使用的值与`screen.width/height`相同，基于设备像素工作。
+
+{% asset_img desktop_mediaqueries.jpg desktop_mediaqueries %}
+
+你应该使用哪一个？几乎不用想，选用`width/height`，web开发者对设备宽度是不关心的啊，我们只需要关注浏览器窗口的大小。
+所以，忘掉`device-width`并使用`width`即可,接下来我们可以看到，在移动端这种情况更混乱。
+
+#### 结论(Conclusion)
+这篇文章我们总结了桌面浏览器的一些行为，在第二篇中我会介绍在移动端中相关的概念，并揭示一些与桌面端浏览器的不同之处。
 
 > **tips:**
 > 本文是一篇介绍浏览器viewport的译文，我觉得掌握这些知识对后续无论是pc端或mobile端的web开发工作会有很大的帮助，由于原文指向的中文翻译地址已经失效，故此在我的blog上在翻译一次。对于一些技术名词我会保留，以避免造成误解。个人能力有限，若翻译上有错误或不准确的地方，望大家斧正。[blog-source](https://github.com/llcat/blog-source)
