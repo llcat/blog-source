@@ -10,6 +10,17 @@ tags:
 
 <!--more-->
 
+#### vscode如何在jsx中开启emmet
+在前端开发中，emmet基本上是我们离不开的插件，但是vscode默认是不再js中支持emmet的，所以手写jsx有点难受哈，查了下资料，发现我们可以配置在js中开启emmet,在vscode的seetting.json中加入下面的配置。
+
+```json
+"emmet.includeLanguages": {"javascript": "javascriptreact"}
+```
+如果你想同时支持vue模板，加这个：
+```json
+ "emmet.includeLanguages": {"vue-html": "html", "javascript": "javascriptreact"}
+```
+
 #### 关于python操作excel
 最近接到一个任务是从zip档中解压出log文件，提取出相关的信息后填充到一个模板Excel表格中。考量了需求和自己技能栈后决定选用python完成自动化的工作及提供一个本地http服务器，用vue写一个页面提供配置和简化操作(提供给测试人员使用,有个UI可能更好上手)。在查阅了相关资料后选用`openpyxl`这个包来处理excel。
 > `openpyxl`还在稳定的更新中，相较于以前使用过的`xlrd`和`xlwt`等工具提供了更完备的功能，这里给出参考
