@@ -68,5 +68,18 @@ content-box, border-box
 document.addEventListener("click",(e)=>{alert(e.target.tagName)})
 ```
 
+#### a标签的有那几个伪类？
+`<a>`标签有下面4个伪类:
+- `:link`
+当有链接属性的时候显示(即`<a href="index.html"></a>`)。
+- `:visited`
+链接的地址被访问过时。
+- `:hover`
+鼠标移动到dom节点上时。
+- `:active`
+鼠标点击瞬间。
+
+几个需要注意的地方：
+- `link` and `visited`
 
 
