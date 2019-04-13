@@ -10,6 +10,12 @@ tags:
 
 <!--more-->
 
+#### a标签实现静态文件的下载。
+在html5中a标签中新增了一个download属性，用来说明这是个下载链接，点击后浏览器会进行下载行为而不是链接跳转
+```html
+<a class="download-link" href="http://domain/static/pdf/test.pdf" download="test.pdf" >
+```
+
 #### vscode如何在jsx中开启emmet
 在前端开发中，emmet基本上是我们离不开的插件，但是vscode默认是不再js中支持emmet的，所以手写jsx有点难受哈，查了下资料，发现我们可以配置在js中开启emmet,在vscode的seetting.json中加入下面的配置。
 

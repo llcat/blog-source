@@ -44,7 +44,6 @@ content-box, border-box
 
 #### 说一下你用过的伪类
 
-#### a标签几个伪类选择器
 
 #### 你用过那些CSS选择器
 
@@ -80,6 +79,115 @@ document.addEventListener("click",(e)=>{alert(e.target.tagName)})
 鼠标点击瞬间。
 
 几个需要注意的地方：
-- `link` and `visited`
+- `:link` and `:visited`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style type="text/css">
+        a:link {
+            color: rgb(34, 211, 63);
+        }
+        a:visited {
+            color: rgba(255, 0, 0, 0.733);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 无href,不会显示link和visited的样式 -->
+    <a>no href</a>
+    <br>
 
+    <!-- 特例：href为""时会显示visited的样式 -->
+    <a href="">href is ""</a><br>
 
+    <!-- 
+        没访问前都是link样式,访问过后是visited样式。
+        chrome中是根据历史记录来确定是link还是visited样式的，
+        所以刷新页面不会更改一个链接已访问过的事实，除非清空历史记录,
+        否则对于已访问过的链接显示visited的样式，在其他的浏览器中这点可能不同(如edge),
+        还有浏览器的隐私模式下等特例。
+     -->
+    <a href="http://llcat.tech">href is http://llcat.tech</a><br>
+    <a href="#">href is #</a><br>
+    <a href="#/">href is #/</a><br>
+    <a href="#test">href is #test</a><br>
+    <a href="/test/test.html">href is /test/test.html</a><br>
+
+    <!-- 特殊：执行js不会记录到历史中，所以点击后不会显示visited,只显示link样式 -->
+    <a href="javascript:alert(0)">href is javascript:alert(0)</a><br>
+</body>
+</html>
+```
+
+- `:hover`和`:active`
+`:active`应该永远放在`:hover`后面，因为鼠标移动到某个元素上时并进行了点击操作时，会同时出发`:hover`和`:active`，但是`:active`是一瞬间的样式，所以如果在`:hover`后面则会被覆盖掉不显示。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .hover-before-active:hover {
+            background: rgb(34, 118, 214);
+        }
+        .hover-before-active:active {
+            background: rgb(23, 170, 84);
+        }
+        .hover-after-active:active {
+            background: rgb(23, 170, 84);
+        }
+        .hover-after-active:hover {
+            background: rgb(34, 118, 214);
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="hover-before-active">hover-before-active</a><br>
+    <a href="#" class="hover-after-active">hover-after-active</a>
+</body>
+</html>
+```
+
+- `:hover`和`visited`
+`:visited`应该放在`:hover`之前，因为如果`:hover`放在`:visited`之后，一个已访问过的标签永远不会显示`:hover`效果，它会被`:visited`覆盖。
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .hover-before-visited:hover {
+            color: rgb(34, 118, 214);
+        }
+        .hover-before-visited:visited {
+            color: rgb(23, 170, 84);
+        }
+        .hover-after-visited:visited {
+            color: rgb(23, 170, 84);
+        }
+        .hover-after-visited:hover {
+            color: rgb(34, 118, 214);
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="hover-before-visited">hover-before-visited</a><br>
+    <a href="#" class="hover-after-visited">hover-after-visited</a>
+</body>
+</html>
+```
+
+总结下：
+如果我们需要设置`<a>`标签的伪类，需要避免`:hover`和`:active`的冲突以及`:hover`和`:visited`的冲突。那么我们可以给这三个伪类排个序就是visited < hover < active，最后在最前面加上link即可。按照联想记忆法可以记成这样，lv-ha(love -> hate)。
