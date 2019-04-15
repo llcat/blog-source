@@ -27,7 +27,7 @@ categories: front-end
 > - [The Modern JavaScript Tutorial](https://github.com/iliakan/javascript-tutorial-en)
 
 #### ES6新特性
-
+常见的有如let, const, 解构赋值，Promise, async/await, Proxy, Symbol,
 #### JS中有哪些数据类型
 Number, Boolean, String, Null, Undefine, Object, Symbol
 
@@ -43,9 +43,36 @@ IE的怪异盒子模型, 标准盒子模型(content, padding, border, margin)
 content-box, border-box
 
 #### 说一下你用过的伪类
-
+:hover, :link, :visited, :active, :focus
 
 #### 你用过那些CSS选择器
+选择器大致上可以分为下面几类：
+- 简单选择器
+比如我们常见的元素选择器，类选择器，id选择器，用以匹配一个或多个元素。
+
+- 属性选择器
+通过属性或属性值匹配一个或多个元素。
+
+- 伪类选择器
+匹配处于某个特定状态的一个或多个元素。
+
+- 伪元素
+匹配处于相关位置的一个或多个元素，如每个段落的第一个字，或某个元素的第一个子元素或最后一个子元素。
+
+- 组合器
+用来组合使用我们的选择器，可以用于非常特定的选择。
+组合器有下面这几种
+  - 后代选择器
+    eg：`A B`,匹配A节点下的B节点，即B是A的子元素或者B是A的子元素的子元素。
+  - 子选择器
+    eg: `A>B`匹配B元素，满足条件：B是A的直接字节点。
+  - 相邻兄弟选择器
+    eg: `A+B`,B是A的下一个兄弟节点，AB拥有相同的父节点，并且B紧跟在A后面。
+  - 通用兄弟选择器
+    eg: `A~B`,匹配B元素，满足B是A之后的任意一个兄弟节点(AB拥有相同的父节点，B在A之后，但B不一定紧挨着A)
+    
+- 多重选择器
+用','隔开的多个选择器，可以将一组声明用于多个选择器的所有元素。
 
 #### 说一下CSS各个选择器的优先级
 
@@ -191,3 +218,10 @@ document.addEventListener("click",(e)=>{alert(e.target.tagName)})
 
 总结下：
 如果我们需要设置`<a>`标签的伪类，需要避免`:hover`和`:active`的冲突以及`:hover`和`:visited`的冲突。那么我们可以给这三个伪类排个序就是visited < hover < active，最后在最前面加上link即可。按照联想记忆法可以记成这样，lv-ha(love -> hate)。
+
+#### GET方法和POST方法的区别
+
+#### 说一说Vue Router你有用到那些钩子函数。
+
+#### 说一下Vue的生命周期
+
