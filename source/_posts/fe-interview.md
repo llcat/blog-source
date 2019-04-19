@@ -225,3 +225,5 @@ document.addEventListener("click",(e)=>{alert(e.target.tagName)})
 
 #### 说一下Vue的生命周期
 
+#### CSS中有那些居中方式
+
