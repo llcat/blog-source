@@ -1,7 +1,7 @@
 ---
 title: MySQL8.0 免安装版本使用指南
 date: 2019-04-17 14:24:49
-categories: mysql
+categories: database
 ---
 
 #### MySQL8.0 免安装版本使用指南
