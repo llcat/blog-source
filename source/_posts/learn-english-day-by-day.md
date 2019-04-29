@@ -7,6 +7,22 @@ tags:
 #### English Vocabulary
 use for recite english vocabulary
 <!--more-->
+
+#### 2019/04/29
+*today's new vocabulary*
+1. `partition`
+2. `contiguous`
+3. `overlapping`
+4. `restriction`
+5. `prune`
+#### 2019/04/27
+*today's new vocabulary*
+1. `termonilogy`
+术语
+2. `nutshell`
+简而言之
+3. `realm`
+领域
 #### 2018/09/26(evening)
 1. `dry`
 2. `dubious`
