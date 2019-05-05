@@ -8,6 +8,32 @@ tags:
 use for recite english vocabulary
 <!--more-->
 
+#### 2019/05/05
+*today's new vocabulary*
+1. `precede`
+优于
+2. `discrete`
+分离的，离散的
+3. `yield`
+产生，让步，迁就
+4. `referrals`
+推介
+#### 2019/04/30
+*today's new vocabulary*
+1. `conceptual`
+概念上的 adj.
+2. `notion`
+概念 n.
+3. `nontheless`
+尽管如此 adv.
+4. `vice versa`
+反之亦然
+5. `portion`
+一部分
+6. `facilitate`
+促进
+7. `evolve`
+发展
 #### 2019/04/29
 *today's new vocabulary*
 1. `partition`
