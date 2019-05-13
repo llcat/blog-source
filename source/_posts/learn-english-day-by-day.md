@@ -1,13 +1,80 @@
 ---
 title: learn english day by day
 date: 2018-07-24 06:56:48
-tags:
-  - life 
+categories: life
 ---
 #### English Vocabulary
 use for recite english vocabulary
 <!--more-->
 
+#### 2019/05/13
+*today's new vocabulary*
+1. `stimulate`
+刺激，激发
+2. `spam`
+垃圾邮件
+3. `anatomy`
+剖析，解剖学
+4. `Demystified`
+揭秘
+5. `idempotent`
+幂等
+6. `guru`
+领袖
+7. `dull`
+平淡，枯燥
+8. `exotic`
+异国情调
+9. `redundancy`
+冗余
+#### 2019/05/10
+*today's new vocabulary*
+1. `ambiguity`
+双关，歧义
+2. `deem`
+认为
+#### 2019/05/09
+*today's new vocabulary*
+1. `forth`
+向前，so forth 等等
+2. `collaborator`
+合作者
+3. `distruction`
+毁灭，毁坏
+4. `convention`
+惯例
+5. `parlance`
+说法
+6. `coherent`
+相干
+7. `variant`
+变种
+#### 2019/05/08
+*today's new vocabulary*
+1. `complementary`
+补充
+2. `competition`
+竞争
+3. `self-discipline`
+自律
+4. `embrae`
+拥抱
+5. `coordination`
+协调，协作
+6. `encounter`
+遭遇
+7. `opinionated`
+自以为是
+8. `diverse`
+各种各样的
+9. `intuitive`
+直观的
+#### 2019/05/07
+*today's new vocabulary*
+1. `start from scratch`
+白手起家
+2. `idiom`
+习语，习惯用法
 #### 2019/05/05
 *today's new vocabulary*
 1. `precede`
