@@ -1,14 +1,71 @@
 ---
 title: 技术备忘录
-date: 2018-08-05 22:28:54
+date: 2019-05-23 22:28:54
 tags:
   - technology
 ---
 
 #### 前言
-可能是年龄大了，记忆力越来越不好呢，本着好记性不如烂笔头的原则，将一些可能会用到的一些技术方面的杂项记录下来。
+本着好记性不如烂笔头的原则，将一些可能会用到的一些技术方面的杂项记录下来，方便以后查阅和回顾。
 
 <!--more-->
+#### 关于MySQL的日期时间类型TIMESTAMP和DATETIME的选用问题
+日期+时间类型的数据很常见,除了一些必要的时间记录外，还有比如一条记录创建的日期时间，最后更新的日期时间，这种字段我们不想对它进行手动更新的操作，可以交给MySQL自动帮我们完成，但这个时候有的人对应该选用那种数据类型会有一些疑惑。那么我下面总结一下它们之间的异同。
+- 自动初始化和更新
+  网上关于这一点的知识比较老旧呢，很多博客里面写的是datetime数据类型不能自动初始化和更新，实际查阅官方文档可知，MySQL在5.6版本时加入了对datetime数据类型的自动初始化和更新的支持，所以在MySQL 5.6及之后的版本中，这两种数据类型都是支持自动初始化和更新的。如果你使用的版本<=5.5,那么仅有timestamp数据类型支持自动初始化和更新。
+
+- 时间范围
+  timestamp: `1970-01-01 00:00:01`到`2038-01-19 03:14:07`
+  datetime: `1000-01-01 00:00:00`到`9999-12-31 23:59:59`
+  timestamp和datetime所支持的时间范围是不同的，timestamp支持的时间范围是小很多的，今年已经是2019年，如果你觉的自己写的XXX系统还能好死不死的在跑个二十年，还是谨慎选用timestamp吧。
+  
+  *关于timestamp时间范围的说明*
+  不知道MySQL官方官方文档出于什么方面的考虑给的起始时间点是`1970-01-01 00:00:01`而不是`1970-01-01 00:00:00`这个时间原点。
+  `2038-01-19 03:14:07`这个截至时间是怎么来的？其实就是从时间原点加了一个最大的时间戳所能表示的时间，timestamp存储占4个字节,那么带符号整形所能表示的最大正数就是2^31-1,你可以在浏览器的控制台中快速验证下：
+  ```js
+  d1 = new Date((Math.pow(2,31)-1)*1000)
+  // Tue Jan 19 2038 11:14:07 GMT+0800 (中国标准时间)
+  // 由于我所在时区为东八区(其实中国版图横跨了近5个时区。。。)，相对于本初子午线所在的0时区多加了8H,换算成0时区的时间就是2038-01-19 03:14:07
+  // 如果你不了解时区的概念，请自行查阅相关资料。
+  ```
+
+- 时区的影响
+  timestamp的值是受时区影响的，timestamp类型的值在存入时，会根据系统或mysql指定的时区转换成UTC时间(协调世界时)后在写入，同理取出时是从UTC时间，根据系统或mysql指定的时区转换后在获得的。所以它的值是受时区影响的。
+  datetime的值是不受时区影响的。不管系统或mysql指定的时区如何变化，datetime类型的数据存进去多少，取出来就是多少。
+
+- mysql如何处理不合法的时间范围？
+  对于timestamp和datetime两种数据类型，处理方式是一样的，如果当前存储的值在合法的时间范围外，mysql统一处理成`0000-00-00 00:00:00`
+
+小实验
+```sql
+CREATE TABLE user (
+  name VARCHAR(20),
+  create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  tdate1 TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  tdate2 DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO user (name) value ("pino");
+SELECT * FROM user;
+SET time_zone='+00:00';
+
+SET time_zone='+08:00';
+
+-- 检查是否会自动更新
+UPDATE user SET name="onip";
+
+-- 我在UTC+8区,所以08:00:00就已经不在范围内呢，tdate1结果是0000-00-00 00:00:00
+UPDATE IGNORE user SET tdate1='1970-01-01 08:00:00', tdate2="2017-12-03 00:00:35";
+-- 同上
+UPDATE IGNORE user SET tdate1='2038-02-01 08:00:00';
+-- 这里看起来和文档描述并不一致，tdate2我插入成功呢，并没有变成0000-00-00 00:00:00,会有警告。
+UPDATE IGNORE user SET tdate1='1970-01-01 08:00:01', tdate2="999-08-01 00:00:35";
+
+```
+
+> 参考: 
+> [The DATE, DATETIME, and TIMESTAMP Types](https://dev.mysql.com/doc/refman/8.0/en/datetime.html)
+> [Automatic Initialization and Updating for TIMESTAMP and DATETIME](https://dev.mysql.com/doc/refman/8.0/en/timestamp-initialization.html)
 
 #### 一些查看服务器状态常用的指令
 - `free`
