@@ -6,7 +6,37 @@ categories: life
 #### English Vocabulary
 use for recite english vocabulary
 <!--more-->
-
+#### 2019/05/29
+1. `facade`
+正面
+#### 2019/05/23
+*today's new vocabulary*
+1. `retain`
+保留
+#### 2019/05/21
+*today's new vocabulary*
+1. `comprehension`
+理解，理解力
+2. `trail`
+线索
+3. `archetype`
+原型
+4. `artifact`
+神器，人工品
+5. `daunt`
+吓住
+6. `intricacies`
+错综复杂
+7. `conceive`
+构想
+8. `suffice`
+满足，合格
+9. `phase`
+阶段，逐步执行
+#### 2019/05/14
+*today's new vocabulary*
+1. `recursive`
+递归
 #### 2019/05/13
 *today's new vocabulary*
 1. `stimulate`
@@ -15,7 +45,7 @@ use for recite english vocabulary
 垃圾邮件
 3. `anatomy`
 剖析，解剖学
-4. `Demystified`
+4. `demystified`
 揭秘
 5. `idempotent`
 幂等
@@ -27,6 +57,12 @@ use for recite english vocabulary
 异国情调
 9. `redundancy`
 冗余
+10. `conprehensive`
+全面，全方位
+11. `pique`
+愤怒，激怒
+12. `truncate`
+截短
 #### 2019/05/10
 *today's new vocabulary*
 1. `ambiguity`

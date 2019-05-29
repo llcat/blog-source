@@ -2,7 +2,7 @@
 title: LeetCode(SQL Summary)
 date: 2018-10-25 15:02:29
 tags: SQL
-categories: database
+categories: leetcode
 ---
 
 #### LeetCode SQL类题目总结
