@@ -6,6 +6,88 @@ categories: life
 #### English Vocabulary
 use for recite english vocabulary
 <!--more-->
+
+#### 2019/06/17
+1. `abbrevivation`
+缩写
+#### 2019/06/14
+1. `appetizer`
+开胃菜
+2. `main course`
+主菜
+3. `dessert`
+甜点
+4. `lasagne`
+千层面
+4. `lemtils`
+扁豆
+5. `hummus`
+鹰嘴豆泥
+6. `tiramisu`
+提拉米苏
+7. `gelato`
+冰淇淋
+8. `creme`
+奶油
+9. `caramel`
+焦糖
+10. `decaf coffee`
+无咖啡因咖啡
+11. `espresso`
+浓咖啡
+12. `cappuccino`
+卡布奇诺
+13. `hreb tea`
+香草茶
+14. `municipal`
+市政的
+15. `junk`
+破烂
+16. `presence`
+存在
+17. `comprise`
+包括
+#### 2019/06/13
+1. `cononical`
+典范
+2. `ordinal`
+序数词
+3. `shrubbery`
+灌木丛
+4. `spiciness`
+富于香料
+5. `burrito`
+卷饼
+6. `witch`
+巫婆
+7. `cruiser`
+巡洋舰
+#### 2019/06/12
+1. `jupiter`
+木星
+2. `vintage`
+酿酒，最佳的
+#### 2019/06/10
+1. `criteria`
+标准
+2. `clause`
+条款，条文
+#### 2019/06/03
+1. `fraction`
+分数， 分
+2. `facility`
+设施，设备
+#### 2019/06/02
+1. `retention`
+保留，保持，保有
+2. `essence`
+本质
+3. `protal`
+门户
+4. `ass`
+屁股
+5. `trivial`
+不重要的
 #### 2019/05/29
 1. `facade`
 正面

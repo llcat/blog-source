@@ -7,6 +7,10 @@ categories: life
 ### daily plan
 personal daily plan
 
+#### 2019/06/04
+*read*
+读effective java第4张-类与接口
+
 #### 2019/05/09
 *study*
 读spring-framework references的core的1.3-1.5节

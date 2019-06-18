@@ -9,6 +9,58 @@ tags:
 本着好记性不如烂笔头的原则，将一些可能会用到的一些技术方面的杂项记录下来，方便以后查阅和回顾。
 
 <!--more-->
+
+#### EnumSet如何标记一个元素已经在集合中？
+Java的`EnumSet`有两个实现类，分别是`RegularEnumSet`和`JumboEnumSet`,其中`RegularEnumSet`应用于不操作64个元素的集合，`JumboEnumSet`应用于超过64位元素的集合。
+```java
+public static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) {
+        Enum<?>[] universe = getUniverse(elementType);
+        if (universe == null)
+            throw new ClassCastException(elementType + " not an enum");
+
+        if (universe.length <= 64)
+            return new RegularEnumSet<>(elementType, universe);
+        else
+            return new JumboEnumSet<>(elementType, universe);
+    }
+```
+其中的`RegularEnumSet`使用一个long类型的整数来标记一个元素是否在集合中的，一个long类型的整数由8字节64位组成，那么在每一位上的0或1是可以表示某个元素是存在还是不存在的，那么它实际是如何运行的呢？我们接下来看看`add`和`remove`这两个常见的方法是如何工作的吧。
+```java
+private long elements = 0L;
+public boolean add(E e) {
+        typeCheck(e);
+
+        long oldElements = elements;
+        elements |= (1L << ((Enum<?>)e).ordinal());
+        return elements != oldElements;
+    }
+```
+重点在这一句`elements |= (1L << ((Enum<?>)e).ordinal());`,Enum类型在定义时就给每个实例根据定义的顺序指定了它的索引值，所以我们的add方法实际上就是在我们的elements标记位上将对应的位做了一个置1的操作。比如我们加入了ordinal值位3和5的两个enum实例，实际上elements的值会发生这样的变化。
+```
+0000 0001 << 3  -> 0000 1000
+elements = 0L = 0000 0000
+0000 0000 | 0000 1000 = 0000 1000
+```
+这样就可以标记索引值位3的enum实例已经加到Set中呢。同理，我们在加入一个索引值为5的enum实例也是一样的。
+```
+0000 0001 << 5 -> 0010 0000
+elements = 8L = 0000 1000
+0000 1000 | 0010 0000 = 0010 1000
+```
+这样就可以标记索引值为5的实例加入到了Set中，这样用一个long值就达成了标记64个元素的目的。
+remove方法的关键操作如下:
+```java
+elements &= ~(1L << ((Enum<?>)e).ordinal());
+```
+ordinal值左移后取反，做按位与运算。还是以刚才的例子,我们remove掉索引值为3的enum实例
+0000 0001 << 3 -> 0000 1000
+~ (0000 1000) -> 1111 0111
+elements = 40L = 0010 1000
+0010 1000 & 1111 0111 = 0010 0000
+这样就将对应索引为3的enum对应的位的值置0呢，很有意思。
+
+你还可以探究下`RegularEnumSet`的其他方法是怎么围绕`elements`这个标志位做操作的。而对于实例数目超过64的Enum时使用的`JumboEnumSet`,它是用一个long类型的数组来做标记，这个标记数组第0个long值表示ordinal为0~63的实例，第一个long值表示64~127的实例，这样,我们可以将ordinal >>> 6 (即ordinal/64)计算出它对应的标志位，再对标志位做操作即可。
+
 #### 关于MySQL的日期时间类型TIMESTAMP和DATETIME的选用问题
 日期+时间类型的数据很常见,除了一些必要的时间记录外，还有比如一条记录创建的日期时间，最后更新的日期时间，这种字段我们不想对它进行手动更新的操作，可以交给MySQL自动帮我们完成，但这个时候有的人对应该选用那种数据类型会有一些疑惑。那么我下面总结一下它们之间的异同。
 - 自动初始化和更新
