@@ -7,6 +7,12 @@ categories: life
 use for recite english vocabulary
 <!--more-->
 
+#### 2019/06/19
+1. `heuristic`
+启发式
+#### 2019/06/18
+1. `spray`
+喷雾
 #### 2019/06/17
 1. `abbrevivation`
 缩写
