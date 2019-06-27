@@ -7,6 +7,23 @@ categories: life
 use for recite english vocabulary
 <!--more-->
 
+#### 2019/06/27
+1. `recap`
+概括
+#### 2019/06/26
+1. `thirsty`
+渴
+#### 2019/06/25
+1. `provision`
+规定
+2. `whilst`
+同时
+#### 2019/06/24
+1. `wax`
+蜡
+#### 2019/06/20
+1. `unary`
+一元
 #### 2019/06/19
 1. `heuristic`
 启发式
