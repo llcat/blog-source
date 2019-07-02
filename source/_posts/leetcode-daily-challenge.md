@@ -3,6 +3,10 @@ title: leetcode(每日一练)
 date: 2019-05-14 08:55:43
 categories: leetcode
 ---
+#### 引言
+有时间和精力的情况下刷刷leetcode吧，活跃活跃脑细胞~
+
+<!-- more -->
 
 #### 2019/05/14
 - 206(easy). reverse linked list(翻转链表)
