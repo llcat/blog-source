@@ -7,6 +7,11 @@ categories: life
 ### daily plan
 personal daily plan
 
+#### 2019/07/01
+*study*
+1. 读spring security reference.
+[Java Configuration](https://docs.spring.io/spring-security/site/docs/5.1.5.RELEASE/reference/htmlsingle/#jc) 6.1-6.5节
+
 #### 2019/06/04
 *read*
 读effective java第4张-类与接口

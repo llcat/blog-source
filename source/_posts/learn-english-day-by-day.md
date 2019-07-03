@@ -7,9 +7,26 @@ categories: life
 use for recite english vocabulary
 <!--more-->
 
+#### 2019/07/01
+1. `restrict`
+限制
+2. `forgery`
+伪造品
 #### 2019/06/27
 1. `recap`
 概括
+2. `interceptor`
+拦截器
+3. `veto`
+否决
+4. `abstain`
+避免，戒除
+5. `affirm/affirmative`
+确定/确定性
+6. `unanimous`
+一致
+7. `consensus`
+共识
 #### 2019/06/26
 1. `thirsty`
 渴

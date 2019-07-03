@@ -10,6 +10,87 @@ tags:
 
 <!--more-->
 
+#### `innerHTML`,`outerHTML`,`innerText`,`outerText`
+今天再看Vue实例声明周期周期时，提到从`created` -> `beforeMount`前，对于未包含`template`配置项时，会去拿`el`的`outerHTML`作为template编译成render function.那么outerHTML是什么？我想大家基本上都用过innerHTML，他们之间的区别是啥？那么我们做个小实验来探究一下吧
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Inner and Outer HTML</title>
+</head>
+<body>
+    <div id="aa">
+        aa
+        <p>bb</p>
+        <div id="pp">
+            <span>cc</span>
+        </div>
+    </div>
+</body>
+<script>
+    var pp = document.querySelector("#pp")
+    console.log("---innerHTML----")
+    console.log(pp.innerHTML)
+    console.log("---outerHTML----")
+    console.log(pp.outerHTML)
+    console.log("---innerText----")
+    console.log(pp.innerText)
+    console.log("---outerText----")
+    console.log(pp.outerText)
+
+    pp = document.querySelector("#aa")
+    console.log("---innerHTML----")
+    console.log(pp.innerHTML)
+    console.log("---outerHTML----")
+    console.log(pp.outerHTML)
+    console.log("---innerText----")
+    console.log(pp.innerText)
+    console.log("---outerText----")
+    console.log(pp.outerText)
+</script>
+</html>
+```
+
+实验结果看起来是这样的
+1. outerHTML包含它自身在内的所有节点。
+2. innerHTML包含它的所有子节点。
+3. innerText和outerText看起来差别不大，都是包含了这个节点下的所有文本节点。
+
+看一下在MDN上的解释：
+outerHTML: DOM接口的outerHTML属性获取描述元素（包括其后代）的序列化HTML片段.
+注意：
+1. 如果你的element元素无父元素，即为根元素时，使用outerHTML或抛出异常。
+2. 设置了outerHTML属性的变量保持的仍然是对原始元素的引用，原始元素还在内存中
+见例子：
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>some attentions</title>
+</head>
+<body>
+    <div id="container">
+        <div id="d">This is a div</div>
+    </div>
+</body>
+<script>
+    var container = document.querySelector("#container");
+    var d = document.querySelector("#d")
+    // 设置了outerHTML,但是d引用的节点还在内存中。
+    d.outerHTML = "<p>This is a p tag</p>"
+    console.log(d.nodeName)
+    console.log(container.children[0].nodeName)
+</script>
+</html>
+```
+innerHTML: 设置或获取HTML语法表示的元素的后代.
+
 #### EnumSet如何标记一个元素已经在集合中？
 Java的`EnumSet`有两个实现类，分别是`RegularEnumSet`和`JumboEnumSet`,其中`RegularEnumSet`应用于不操作64个元素的集合，`JumboEnumSet`应用于超过64位元素的集合。
 ```java
