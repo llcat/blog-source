@@ -7,6 +7,29 @@ categories: life
 use for recite english vocabulary
 <!--more-->
 
+#### 2019/07/03
+1. `seriously injured/hurt`
+   she was seriously injured in the second half.
+2. `highly probable/likely`
+   Rain is highly probable tomorrow.
+3. `cautiously optimistic`
+   I am cautiously optimistic about the next StarTerk movie.
+4. `totally wrong`
+   Your answer was totally wrong.
+5. `incredibly lazy`
+   He was incredibly lazy as a kid.
+6. `virtually impossible`
+   This quiz is virtually impossible.
+7. `absolutely incredible`
+   Star Wars was absolutely incredible.
+8. `fully aware`
+   He was fully aware the consequence.
+9. `blatantly abvious`
+    Your feelings for him are blatantly abvious.
+10. `absurdly difficult`
+    The test was absurdly difficult.
+
+all this are Adverb+Adjective Collocations
 #### 2019/07/01
 1. `restrict`
 限制
