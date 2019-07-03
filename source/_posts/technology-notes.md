@@ -10,8 +10,11 @@ tags:
 
 <!--more-->
 
-#### `innerHTML`,`outerHTML`,`innerText`,`outerText`
-今天再看Vue实例声明周期周期时，提到从`created` -> `beforeMount`前，对于未包含`template`配置项时，会去拿`el`的`outerHTML`作为template编译成render function.那么outerHTML是什么？我想大家基本上都用过innerHTML，他们之间的区别是啥？那么我们做个小实验来探究一下吧
+#### 关于`innerHTML`,`outerHTML`,`innerText`,`outerText`
+
+{% asset_img  vue_part_life_cycle.png vue_part_life_cycle%}
+
+今天再看Vue实例生命周期时，提到从`created` -> `beforeMount`前，对于未包含`template`配置项实例时，会去拿`el`的`outerHTML`作为template编译成render function.那么outerHTML是什么？我想大家基本上都用过innerHTML，他们之间的区别是啥？那么我们做个小实验来探究一下吧
 ```html
 <!DOCTYPE html>
 <html lang="en">
