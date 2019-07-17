@@ -7,6 +7,21 @@ categories: life
 use for recite english vocabulary
 <!--more-->
 
+#### 2019/07/05
+1. `monolithic`
+单片
+2. `conceivable`
+可以想象
+3. `crux`
+症结
+4. `proprietary`
+所有者，其自身
+5. `tedious`
+乏味
+6. `verbose`
+详细，啰嗦
+7. `imperative`
+迫切，急迫
 #### 2019/07/03
 1. `seriously injured/hurt`
    she was seriously injured in the second half.

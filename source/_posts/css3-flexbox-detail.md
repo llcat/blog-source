@@ -45,7 +45,7 @@ tips:copy from mdn
 - flex-direction: column-reverse
 
 我们下面通过一个例子来看看这4个值分别是怎么工作的
-[flex-direction demo]() 
+[flex-direction demo](https://github.com/llcat/front_end_practice/blob/master/Css/flexo-demo/flex_direction_demo.html) 
 
 {% asset_img flex-direction01.png flex-direction:row and row-reverse %}
 
@@ -65,7 +65,7 @@ tips:copy from mdn
 - flex-basis 属性为auto
 - flex-wrap 属性为 nowrap
 
-这样你的元素会呈线性排列，元素的大小即为主轴方向上的大小，如果有太多元素超出容器，他们会溢出不会换行，如果某个元素较高，其他元素也会被沿交叉轴方向拉伸,详见见[flex item default action]()
+这样你的元素会呈线性排列，元素的大小即为主轴方向上的大小，如果有太多元素超出容器，他们会溢出不会换行，如果某个元素较高，其他元素也会被沿交叉轴方向拉伸,详见见[flex item default action](https://github.com/llcat/front_end_practice/blob/master/Css/flexo-demo/flex_items_default_action.html)
 
 {% asset_img flex-items-default-action.png flex-items-default-action %}
 

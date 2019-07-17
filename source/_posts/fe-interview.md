@@ -227,3 +227,6 @@ document.addEventListener("click",(e)=>{alert(e.target.tagName)})
 
 #### CSS中有那些居中方式
 
+#### 考查`typeof`和`instanceof`的使用
+
+#### 考察JS的异步执行机制(microtask和macrotask),常见的考察setTimeout(fn,0)和Promise

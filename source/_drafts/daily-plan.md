@@ -7,6 +7,10 @@ categories: life
 ### daily plan
 personal daily plan
 
+#### 2019/07/11
+1. read webpack's guide doc
+- install & get started
+
 #### 2019/07/01
 *study*
 1. 读spring security reference.

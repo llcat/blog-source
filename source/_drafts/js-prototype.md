@@ -29,8 +29,14 @@ s.__proto__ === Student.prototype // expect true
 Object.getPrototypeOf(s) === s.__proto__ // expect true
 ```
 
+上面的关系是一个对象的隐式原型链指向它的构造函数的显式原型对象。那么我们实现继承的方式就很简单了，即一个显式原型对象的隐式原型链指向下一个显式原型对象，我们需要继承的属性和方法都可以挂在原型对象上，这样我们通过原型链一层层的查找就可以呢，还有一个问题是，过长的原型链是会造成性能影响的。
+
 - prototype
-prototype是显式的原型属性(explicit prototype property)，这个属性是用来实现原型的继承和属性的共享的，在JS中，任何一个函数对象都有一个prototype的属性，它是一个对象，也就是我们基于的原型对象。
+prototype是显式的原型属性(explicit prototype property)，这个属性是用来实现原型的继承和属性的共享的，在JS中，任何一个函数对象都有一个prototype的属性，它是一个对象，也就是我们基于的原型对象。让我们看看一个原型对象里面有些啥
+
+```js
+
+```
 
 #### new 操作符做了什么
 
