@@ -10,6 +10,23 @@ tags:
 
 <!--more-->
 
+#### git清除本地的远端仓库已删除的分支
+我们有时在加新功能或该bug时经常会在远端仓库切一条分支后在拉下来做修改, 一般做完修改测试通过后将代码合并后就将远端仓库的这条分支删掉呢，但是我们在本地这个时候还有对远端分支的一个track记录存在, 也就是以`remotes/origin`开头的分支没有删除。
+```sh
+# 查看所有分支
+git branch -a
+```
+
+我尝试使用`git branch -d`好像不能删除这种remotes开头的远程分支。git实际上提供了其他的指令来帮助我们查看管理这种远程分支。
+```sh
+# 查看我们上游的远端仓库
+git remote -v
+# 查看远程仓库的完整信息，包括分支情况(tracked, stale等等)
+git remote show origin
+# 对于已经失效的远端分支，你想在本地将他们清除的话, 使用下面的命令
+git remote prune origin
+```
+
 #### 关于`innerHTML`,`outerHTML`,`innerText`,`outerText`
 
 {% asset_img  vue_part_life_cycle.png vue_part_life_cycle%}
