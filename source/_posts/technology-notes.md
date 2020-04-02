@@ -10,6 +10,14 @@ tags:
 
 <!--more-->
 
+#### nginx开启gzip压缩
+nginx依靠ngx_http_gzip_module这个模块完成对内容的压缩，配置参考![文档](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
+值得一提的是`gzip_types`这个配置项，默认生效的mime类型只有`text/html`,如果你想开启其他类型(js,css等)文件的压缩, 请配置对应的mime类型。
+eg:
+```
+gzip_types text/plain text/javascript application/javascript application/x-javascript text/css application/xml application/x-httpd-php image/jpeg image/gif image/png audio/mpeg video/mp4;
+```
+顺带说明`text/javascript application/javascript application/x-javascript`记得配置`application/javascript`,很多人拷的配置是很久以前的，导致content-type为`application/javascript`没被压缩不生效。
 #### git清除本地的远端仓库已删除的分支
 我们有时在加新功能或该bug时经常会在远端仓库切一条分支后在拉下来做修改, 一般做完修改测试通过后将代码合并后就将远端仓库的这条分支删掉呢，但是我们在本地这个时候还有对远端分支的一个track记录存在, 也就是以`remotes/origin`开头的分支没有删除。
 ```sh
