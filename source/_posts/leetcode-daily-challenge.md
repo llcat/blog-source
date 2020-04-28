@@ -4,9 +4,80 @@ date: 2019-05-14 08:55:43
 categories: leetcode
 ---
 #### 引言
-有时间和精力的情况下刷刷leetcode吧，活跃活跃脑细胞~
+leetcode每日一练, 随手写写篇~
 
 <!-- more -->
+
+### Tree
+#### 2020/04/28
+- [590(easy) N-ary Tree Postorder Traversal](https://leetcode.com/problems/n-ary-tree-preorder-traversal/)
+N叉树的先序遍历，用迭代不要用递归
+不难，数据结构课后作业的水平，题目要求最好用迭代实现，首先回忆下二叉树先序遍历的口诀, 根左右，先访问根节点，然后遍历左子树，最后遍历右子树，N叉树结构也是同理，只不过我们子节点的数目从2个变成了N个, 从左至右按照子节点的顺序遍历，如果子节点不是叶子节点，从左到右遍历子节点的子节点。
+soluton(递归):
+```java
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public List<Node> children;
+
+    public Node() {}
+
+    public Node(int _val) {
+        val = _val;
+    }
+
+    public Node(int _val, List<Node> _children) {
+        val = _val;
+        children = _children;
+    }
+};
+*/
+
+class Solution {
+    public List<Integer> postorder(Node root) {
+        List<Integer> r = new ArrayList<>();
+        if (root == null) return r;
+        r.add(root.val);
+        if (root.children != null) {
+            for (Node node : root.children) {
+                r.addAll(preorder(node));
+            }
+        }
+        return r;
+    }
+}
+```
+
+soluton(迭代):
+```java
+/**
+* 迭代遍历的情况下，我们需要找一个位置将我们暂时遍历不到的节点
+* 存起来，在递归时，这些值是存在函数栈里面的，这里我们也用一个栈来保存当前还没访问到* 的节点。
+*/
+class Solution {
+    public List<Integer> postorder(Node root) {
+        List<Integer> r = new ArrayList<>();
+        Stack<Node> stack = new Stack<>();
+        if (root == null) return r;
+        Node nextRoot = root;
+        while (nextRoot != null) {
+            r.add(nextRoot.val);
+            if (nextRoot.children != null) {
+                for (int i = nextRoot.children.size()-1; i>=0; i--) {
+                    stack.push(nextRoot.children.get(i));
+                }
+            }
+            if (!stack.isEmpty()) {
+                nextRoot = stack.pop();
+            } else {
+                nextRoot = null;
+            }
+        }
+        return r;
+    }
+}
+```
 
 #### 2019/05/14
 - 206(easy). reverse linked list(翻转链表)
