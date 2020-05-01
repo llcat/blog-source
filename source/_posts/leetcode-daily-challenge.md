@@ -9,6 +9,60 @@ leetcode每日一练, 随手写写篇~
 <!-- more -->
 
 ### Tree
+#### 2020/05/01
+- [700(easy) Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
+二叉查找树的查询，跟遍历类似吧, 递归一把梭~
+solution:
+```java
+class Solution {
+    public TreeNode searchBST(TreeNode root, int val) {
+        if (root == null) {
+            return null;
+        }
+        TreeNode r = null;
+        if (root.val == val) {
+            return root;
+        } else if (val < root.val) {
+            r = searchBST(root.left, val);
+        } else if (val > root.val){
+            r = searchBST(root.right, val);
+        }
+        return r;
+    }
+}
+```
+- [897(easy) Increasing Order Search Tree](https://leetcode.com/problems/increasing-order-search-tree/)
+换汤不换药，本质上是二叉树的中序遍历(左右根), 按遍历的顺序拼接成一颗单边的树即可, 还是递归走起。
+```java
+public TreeNode increasingBST(TreeNode root) {
+        List<Integer> list = traversal(root);
+        TreeNode r = null;
+        TreeNode temp = null;
+        for (int val : list) {
+            if (temp == null) {
+                temp = new TreeNode(val);
+                r = temp;
+            } else {
+                temp.right = new TreeNode(val);
+                temp = temp.right;
+            }
+        }
+        return r;
+    }
+
+    private List<Integer> traversal(TreeNode root) {
+        List<Integer> r = new ArrayList<>();
+        if (root == null) return r;
+        if (root.left !=null) {
+            r.addAll(traversal(root.left));
+        }
+        r.add(root.val);
+        if (root.right != null) {
+            r.addAll(traversal(root.right));
+        }
+        return r;
+    }
+```
 #### 2020/04/29
 - [590(easy) N-ary Tree Postorder Traversal](https://leetcode.com/problems/n-ary-tree-postorder-traversal/)
 N叉树的后序遍历，先遍历所有的子节点，最后访问根节点。子节点不为空，向下按照规则遍历子节点的子节点。
