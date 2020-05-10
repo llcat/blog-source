@@ -9,6 +9,77 @@ leetcode每日一练, 随手写写篇~
 <!-- more -->
 
 ### Tree
+#### 2020/05/10
+- [100(easy) Same Tree](https://leetcode.com/problems/same-tree/)
+判断是不是相等的二叉树，还是无脑递归即可。 
+```java
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null && q == null) return true;
+        boolean c1 = p == null;
+        boolean c2 = p != null && q == null;
+        boolean c3 = p != null && q != null && p.val != q.val;
+        return !c1 && !c2 && !c3 && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+}
+```
+- [965(easy) Univalued Binary Tree](https://leetcode.com/problems/univalued-binary-tree/)
+这里我没有用递归，而是用栈解决的, 记录了上一个被pop的节点与当前pop的节点做对比即可，只要值不同，那他就不是一颗同值的树。
+```java
+class Solution {
+    public boolean isUnivalTree(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        TreeNode pre = null;
+        while (!stack.isEmpty()) {
+            TreeNode n = stack.pop();
+            if (n.right != null) {
+                stack.push(n.right);
+            }
+            if (n.left != null) {
+                stack.push(n.left);
+            }
+            if (pre != null && pre.val != n.val) {
+                return false;
+            }
+            pre = n;
+        }
+        return true;
+    }
+}
+```
+- [559(easy)Maximum Depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)
+求n叉树的最大深度, 这里还是用了递归, 遍历时用传参记录下深度
+solution:
+```java
+class Solution {
+    public int maxDepth(Node root) {
+        return calDepth(root, 0);
+    }
+
+    public int calDepth(Node root, int depth) {
+        int r;
+        if (root == null) {
+            r = depth;
+            return r;
+        }
+        r = depth + 1;
+        if (root.children != null && root.children.size() > 0) {
+            int childDepth = 0;
+            for (Node node : root.children) {
+                int t = calDepth(node, r);
+                if (t > childDepth) {
+                    childDepth = t;
+                }
+            }
+            if (childDepth > r) {
+                r = childDepth;
+            }
+        }
+        return r;
+    }
+}
+```
 #### 2020/05/01
 - [700(easy) Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
 二叉查找树的查询，跟遍历类似吧, 递归一把梭~
