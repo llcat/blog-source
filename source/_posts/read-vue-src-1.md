@@ -5,6 +5,11 @@ tags: vue.js
 categories: fe
 ---
 
+#### 2020/06/02
+1. js原型, new(函数的构造调用), class(es6)使用原型怎么实现的, __proto__及prototype原型对象
+2. js中microTask和marcoTask的概念, 涉及到Vue处理watcher时的流程。
+3. 理清Observer, Dep, Watcher三个类之间的关系
+
 重点关注index.js, dep.js, watcher.js,schedule.js
 - `index.js`
 
