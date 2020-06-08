@@ -161,23 +161,62 @@ Object.defineProperty(Person.prototype, 'age', {
     set: function (val) {
         ageVal = val;
     },
-    writable: false
+    configurable: true
 })
 
+// 第二种方式将值存储在实例的内部属性上
 Object.defineProperty(Person.prototype, 'age', {
     get: function() {
-        return this.ageVal
+        return this._ageVal
     },
     set: function (val) {
-        this.ageVal = val;
-    }
+        this._ageVal = val;
+    },
+    configurable: true
 })
 
 p1.age = 18;
 p2.age // 18
+// 如果你使用chrome, 在控制台输出p1时可能会在p1上看到age属性, 这是chrome显示的问题. 可以使用Object.getOwnPropertyNames验证下, 或者换用firefox测试。
+Object.getOwnPropertyName(p1); // [] or ['_ageVal']
 ```
 - new操作符是干什么的?
+要搞懂new操作符是干嘛的, 我们要先理解函数的`prototype`这个属性是干嘛的, 我们还是以`Person`为例子讲下：
+```js
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+Person.prototype.description = function () {
+    console.log(`Hello, My name is ${this.name} and age is ${this.age}`)
+}
+let p1 = new Person('lisa', 22);
+let p2 = new Person('koko', 18);
+```
+prototype是个对象, 但是他是一个特殊的表示某一类型的对象, 他持有某一类型对象共有的特征, 与传统的表示类型特征的抽象描述(class(抽象描述) --> Instance(实例化))不同。js中实例对象把共有的属性和方法全部交给了原型对象呢, 这实际上是另一种形式的抽象方式。这种方式非常轻量且灵活, 比如说我可以随时替换某个实例原型对象, 或者我不想让原型对象替我做简介, 实例自己在定义自己的简介方法也可以(属性遮蔽), 那么实例对象是如何跟原型对象关联起来的呢？就是我们在new构造调用函数时在对象内部定义了`[[Prototype]]`属性指向了原型对象。js在你调用`let p = new Person('lisa', 22)`后, 会在内存中创建一个空的对象, 并设置`p.[[Prototype]] = Person.prototype`, 最后将`this->p`执行函数`Person`。你可以这样理解, (PS: js引擎不是这样干的, 方便理解举的例子)
+```js
+let p = new Object();
+p.[[Prototype]] = Person.prototype; // 伪码
+Person.call(p, 'lisa', 22);
+```
+综上, new操作符其实主要帮我们做了两件事, 1. 建了一个对象实例。 2. 将对象实例和原型对象关联起来。
+按照这个概念, 我们看看依靠js提供的能力, 我们能不能不使用`new`创建一个对象呢
+```js
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
 
+function customNew(constructor, ...args) {
+    let o = {};
+    Object.setPrototypeOf(o, constructor.prototype); // you can use __proto__ in browser, not standard
+    constructor.call(o, ...args);
+    return o;
+}
 
+let p1 = customNew(Person, 'lisa', 22);
+let p2 = new Person('lisa', 22);
+// 在控制台看看p1, p2的区别吧
+```
 
-
+- extends
