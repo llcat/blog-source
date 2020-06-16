@@ -322,11 +322,37 @@ __webpack_require__.d = function(exports, name, getter) {
 // Object.prototype.hasOwnProperty.call
 __webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 ```
-这样梳理下看其实也很清楚呢, `__webpack_require__.d`实际上给我们的`module.exports`定义了我们在源码中设定的要导出的函数, 可枚举不可以重新赋值。这样只想完成后, `_hello__WEBPACK_IMPORTED_MODULE_0__`实际上得到的是下面这样的东西。
+这样梳理下看其实也很清楚呢, `__webpack_require__.d`实际上给我们的`module.exports`定义了我们在源码中设定的要导出的函数, 可枚举不可以重新赋值的一个getter。这样只想完成后, `_hello__WEBPACK_IMPORTED_MODULE_0__`实际上得到的是下面这样的东西。
 ```js
 {
     'hello': function () {
         return hello
+    },
+    'exportButNoImport': function () {
+        return exportButNoImport
     }
 }
 ```
+6. 到这一步就结束呢, 在`_hello__WEBPACK_IMPORTED_MODULE_0__`获取到`hello`函数并执行
+```js
+ function main() {   
+    Object(_hello__WEBPACK_IMPORTED_MODULE_0__["hello"])();
+}
+main();
+```
+
+#### 疑问?
+1. 为什么转换后的代码要包裹在eval中执行, 目的是什么?
+查阅资料得知, 包裹在eval中是webpack生成sourcemap的一种方式, 对应的还有好几种。可以依次试下, webpack的[`devtool`](https://webpack.js.org/configuration/devtool/#root)有非常多的选项。比如换一种生成source-map的方式打包, 就不会有eval呢
+```js
+// webpack.config.js
+module.exports = {
+    devtool: 'source-map'
+}
+```
+参考: [阮一峰sourcemap](http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
+[webpack中的sourcemap](https://www.cnblogs.com/axl234/p/6500534.html)
+2. 在执行导入函数时, 特地使用`Object(func)()`的方式调用, 这样做的好处是什么?
+针对这个问题, 没想明白原因, 不过使用`mode: production`是不存在这行代码的
+
+#### commonjs在webpack中是如何被处理的?
